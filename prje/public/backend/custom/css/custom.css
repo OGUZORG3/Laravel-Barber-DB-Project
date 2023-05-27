@@ -1,0 +1,9 @@
+
+.sortable{
+    cursor: grab;
+}
+.sort-handle{
+
+    background-color: #1d1f21;
+    color: white;
+}
