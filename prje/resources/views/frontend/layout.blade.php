@@ -11,10 +11,10 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/Proje/prje/public/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../prje/public/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/Proje/prje/public/frontend/css/modern-business.css" rel="stylesheet">
+    <link href="../../prje/public/frontend/css/modern-business.css" rel="stylesheet">
 
 </head>
 
@@ -63,8 +63,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="/Proje/prje/public/frontend/vendor/jquery/jquery.min.js"></script>
-<script src="/Proje/prje/public/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../prje/public/frontend/vendor/jquery/jquery.min.js"></script>
+<script src="../../prje/public/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -44,7 +44,7 @@
                 <div class="col-lg-4 col-sm-6 portfolio-item">
                     <div class="card h-100">
 
-                        <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top" src="/images/blogs/{{$blog->blog_file}}" alt=""></a>
+                        <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="{{route('blog.Detail',$blog->blog_slug)}}">{{$blog->blog_title}}</a>
@@ -66,7 +66,7 @@
                 {!! $home_detail !!}
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid rounded" src="/images/settings/{{$home_image}}" alt="">
+                <img class="img-fluid rounded" src="../images/settings/{{$home_image}}" alt="">
             </div>
         </div>
         <!-- /.row -->

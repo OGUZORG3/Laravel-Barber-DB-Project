@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--
+<!--jquery
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
@@ -14,8 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Proje/prje/public/backend/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../backend/custom/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="\berber\prje\public\backend\custom\css\custom.css">
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
@@ -41,16 +41,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/Proje/prje/public/backend/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="\berber\prje\public\backend\bower_components\font-awesome\css\font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="/Proje/prje/public/backend/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="\berber\prje\public\backend\bower_components\Ionicons\css\ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/Proje/prje/public/backend/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="\berber\prje\public\backend\dist\css\AdminLTE.min.css">
 
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="/Proje/prje/public/backend/dist/css/skins/skin-blue.css">
+    <link rel="stylesheet" href="\berber\prje\public\backend\dist\css\skins\skin-blue.css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -259,12 +259,12 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="/Proje/prje/public/backend/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../backend/bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="/Proje/prje/public/backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
-<script src="/Proje/prje/public/backend/dist/js/adminlte.min.js"></script>
+<script src="\berber\prje\public\backend\dist\js\adminlte.min.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
