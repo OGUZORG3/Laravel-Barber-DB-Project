@@ -65,6 +65,8 @@ Route::namespace('Backend')->group(function() {
         //admin
         Route::post('/user/sortable', '\App\Http\Controllers\Backend\UserController@sortable')->name('user.Sortable');
         Route::resource('user', '\App\Http\Controllers\Backend\UserController');
+        //mesaj
+        Route::get('/mesaj','\App\Http\Controllers\Backend\MessageController@mesaj')->name('Message');
         });
     });
 });

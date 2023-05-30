@@ -201,16 +201,17 @@ desired effect
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="{{route('admin.index')}}"><i class="fa fa-link"></i> <span>anasayfa</span></a></li>
                 <li class="active"><a href="{{route('user.index')}}"><i class="fa fa-link"></i> <span>kullanıcılar</span></a></li>
-                <li><a href="{{route('settings')}}"><i class="fa fa-link"></i> <span>Settings</span></a></li>
+                <li><a href="{{route('settings')}}"><i class="fa fa-link"></i> <span>Ayarlar</span></a></li>
+                <li><a href="{{route('Message')}}"><i class="fa fa-link"></i> <span>Mesajlar</span></a></li>
              <li class="treeview">
-                    <a href=""><i class="fa fa-link"></i> <span>Multilevel</span>
+                    <a href=""><i class="fa fa-link"></i> <span>Acılır Sekme</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{route('blog.index')}}">Bloglar</a></li>
-                        <li><a href="{{route('page.index')}}">Page</a></li>
+                        <li><a href="{{route('page.index')}}">Sayfalar</a></li>
                         <li><a href="{{route('slider.index')}}">Slider</a></li>
                     </ul>
                 </li>
@@ -223,7 +224,7 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <h1>Burası ana alan</h1>
+        <br>
         @yield('content')
         <!-- Main content -->
         <section class="content container-fluid">
