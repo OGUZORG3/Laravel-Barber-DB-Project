@@ -11,6 +11,7 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="\berber\prje\public\frontend\css\stil.css" rel="stylesheet">
     <link href="\berber\prje\public\frontend\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -21,9 +22,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark  fixed-top navigasyon" >
     <div class="container">
-        <a class="navbar-brand" href="{{route('home.Index')}}">NE LARAVEL CMS</a>
+        <a class="navbar-brand logo" href="{{route('home.Index')}}">E-Berberim</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,8 +51,11 @@
             </ul>
         </div>
     </div>
+    <cusdüg1 class="m-5">
+        <a>Berber Giriş</a>
+    </cusdüg1>
 </nav>
-
+<div style="margin-bottom: 40px"></div>
 
 @yield('content')
 <!-- Footer -->

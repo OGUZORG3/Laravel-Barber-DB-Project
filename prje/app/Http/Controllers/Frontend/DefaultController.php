@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Packages;
 use Illuminate\Http\Request;
 use App\Models\Sliders;
 use App\Models\Blogs;
@@ -15,6 +16,7 @@ class DefaultController extends Controller
     {
         $data['blog'] = Blogs::all()->sortby('blog_must');
         $data['slider'] = Sliders::all()->sortby('slider_must');
+        $data['packages']= Packages::all()->sortby('id');
         return view('frontend.default.index', compact('data'));
     }
 

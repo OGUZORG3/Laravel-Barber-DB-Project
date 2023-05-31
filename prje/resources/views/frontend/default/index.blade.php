@@ -1,5 +1,5 @@
 @extends('frontend.layout')
-@section('title',"Anasayfa Başlığı")
+@section('title',"E-Berberim")
 @section('content')
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -32,16 +32,17 @@
     </header>
 
     <!-- Page Content -->
-    <div class="container">
+
+    <div class="container cusContainer">
 
 
         <!-- Portfolio Section -->
-        <h2 class="mt-4">Blog</h2>
+        <h2 class="mt-4">Bloglarımız</h2>
 
         <div class="row">
 
             @foreach($data['blog'] as $blog)
-                <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="col-lg-4 col-sm-6 portfolio-item Ablog">
                     <div class="card h-100">
 
                         <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
@@ -72,7 +73,35 @@
         <!-- /.row -->
 
         <hr>
+        <h1>Paketlerimiz</h1>
+        <section class="justify-content-center align-self-center d-flex">
+            <div class="row">
+                @foreach($data['packages'] as $paket)
+                <div class="col-4">
+                    <div class="kart">
+                        <div class="kart2">
+                            <div class="card-body " style="background-color: rgb(0,0,0,0)!important;">
+                                <h5 class="card-title">{{$paket->paket_ad}}</h5>
+                                <p class="card-text">{{$paket->paket_icerik}}</p>
+                            </div>
+                            <ul class="list-group list-group-flush bg-transparent">
+                                <li class="list-group-item bg-transparent ">Cras justo odio</li>
+                                <li class="list-group-item bg-transparent">Dapibus ac facilisis in</li>
+                                <li class="list-group-item bg-transparent">Vestibulum at eros</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
 
+        </section>
+        <section>
+
+        </section>
         <!-- Call to Action Section -->
         <div class="row mb-4">
             <div class="col-md-8">
@@ -84,6 +113,7 @@
         </div>
 
     </div>
+
     <!-- /.container -->
 
 @endsection
