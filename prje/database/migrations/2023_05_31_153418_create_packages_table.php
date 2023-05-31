@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('paket_ad')->nullable();
             $table->string('paket_icerik')->nullable();
+            $table->string('paket_ozellik')->nullable();
         });
     }
 

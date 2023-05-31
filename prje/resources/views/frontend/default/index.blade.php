@@ -73,7 +73,9 @@
         <!-- /.row -->
 
         <hr>
+        @if(!empty($data['packages']))
         <h1>Paketlerimiz</h1>
+
         <section class="justify-content-center align-self-center d-flex">
             <div class="row">
                 @foreach($data['packages'] as $paket)
@@ -84,10 +86,8 @@
                                 <h5 class="card-title">{{$paket->paket_ad}}</h5>
                                 <p class="card-text">{{$paket->paket_icerik}}</p>
                             </div>
-                            <ul class="list-group list-group-flush bg-transparent">
-                                <li class="list-group-item bg-transparent ">Cras justo odio</li>
-                                <li class="list-group-item bg-transparent">Dapibus ac facilisis in</li>
-                                <li class="list-group-item bg-transparent">Vestibulum at eros</li>
+                            <ul class="list-group list-group-flush bg-transparent paketozel">
+                                {{print $paket->paket_ozellik}}
                             </ul>
                             <div class="card-body">
                                 <a href="#" class="card-link">Card link</a>
@@ -99,6 +99,7 @@
             </div>
 
         </section>
+        @endif
         <section>
 
         </section>
