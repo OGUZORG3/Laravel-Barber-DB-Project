@@ -18,12 +18,14 @@
                 </tr>
                 </thead>
                 <tbody class="table-group-divider">
+                    @foreach($data['adminMessages'] as $adminMessages)
                     <tr class="table-primary" >
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
+                        <td>{{$adminMessages->messages_name}}</td>
+                        <td>{{$adminMessages->messages_mail}}</td>
+                        <td>{{$adminMessages->messages_tel}}</td>
+                        <td>{{$adminMessages->messages_mesaj}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
 
