@@ -30,26 +30,27 @@
             <div class="col-lg-8 mb-4">
                 <h3>İletişim Formu</h3>
 
-                <form method="POST" >
+                <form action= "{{route('message.Send')}}" method="POST"
+                enctype="multipart/form" >
                     @CSRF
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Ad Soyad</label>
-                            <input class="form-control" type="text" name="name" placeholder="Ad Soyad" >
+                            <input class="form-control" type="text" name="messages_name" placeholder="Ad Soyad" >
                         </div>
                     </div>
 
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Mail</label>
-                            <input class="form-control" type="email" name="email" placeholder="Mail" >
+                            <input class="form-control" type="email" name="messages_mail" placeholder="Mail" >
                         </div>
                     </div>
 
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Telefon</label>
-                            <input class="form-control" type="text" name="phone" placeholder="phone" >
+                            <input class="form-control" type="text" name="messages_tel" placeholder="phone" >
                         </div>
                     </div>
 
@@ -57,7 +58,7 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Mesaj</label>
-                            <textarea rows="10" cols="100" class="form-control" name="message" ></textarea>
+                            <textarea rows="10" cols="100" class="form-control" name="messages_mesaj" ></textarea>
                             <div class="help-block"></div>
                         </div>
                     </div>

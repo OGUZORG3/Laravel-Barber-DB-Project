@@ -25,6 +25,8 @@ Route::namespace('Frontend')->group(function () {
     //CONTACT
     Route::get('/contact','\App\Http\Controllers\Frontend\DefaultController@contact')->name('contact.Detail');
     Route::post('/contact','\App\Http\Controllers\Frontend\DefaultController@sendMail');
+    Route::post('/message','\App\Http\Controllers\Backend\MessagesController@message')->name('message.Send');
+   // Route::post('/veriler', 'VeriController@store')->name('veriler.store');
 
 });
 
@@ -66,7 +68,7 @@ Route::namespace('Backend')->group(function() {
         Route::post('/user/sortable', '\App\Http\Controllers\Backend\UserController@sortable')->name('user.Sortable');
         Route::resource('user', '\App\Http\Controllers\Backend\UserController');
         //mesaj
-        Route::get('/mesaj','\App\Http\Controllers\Backend\MessageController@mesaj')->name('Message');
+        Route::get('/mesaj','\App\Http\Controllers\Backend\MessagesController@mesaj')->name('Message');
         });
     });
 });
