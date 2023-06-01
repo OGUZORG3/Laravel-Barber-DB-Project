@@ -79,19 +79,21 @@
         <section class="justify-content-center align-self-center d-flex">
             <div class="row">
                 @foreach($data['packages'] as $paket)
-                <div class="col-4">
+                <div class="col-lg-4 col-sm-6 m-auto">
                     <div class="kart">
-                        <div class="kart2">
-                            <div class="card-body " style="background-color: rgb(0,0,0,0)!important;">
+                        <div class="kart2 paketozel ">
+                            <img src="../images/pack/{{$paket->paket_file}}"  class="card-img-top paketresim ">
+                            <div class="card-body" style="background-color: rgb(0,0,0,0)!important;">
                                 <h5 class="card-title">{{$paket->paket_ad}}</h5>
                                 <p class="card-text">{{$paket->paket_icerik}}</p>
                             </div>
-                            <ul class="list-group list-group-flush bg-transparent paketozel">
-                                {{print $paket->paket_ozellik}}
-                            </ul>
+
+                                {!! $paket->paket_ozellik !!}
+
                             <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Satın Al</a>
                             </div>
+
                         </div>
                     </div>
                 </div>

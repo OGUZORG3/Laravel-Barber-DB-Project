@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('paket_ad')->nullable();
             $table->string('paket_icerik')->nullable();
             $table->string('paket_ozellik')->nullable();
+            $table->string('paket_fiyat');
+            $table->string('paket_file')->nullable();
         });
     }
 

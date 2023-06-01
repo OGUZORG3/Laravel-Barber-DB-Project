@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- CSS -->
+    <link href="\berber\prje\public\frontend\css\stil.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <!-- Default theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
@@ -91,7 +92,7 @@ desired effect
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="#" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>P</span>
             <!-- logo for regular state and mobile devices -->
@@ -210,6 +211,7 @@ desired effect
               </span>
                     </a>
                     <ul class="treeview-menu">
+                        <li><a href="{{route('paket.index')}}">Paketler</a></li>
                         <li><a href="{{route('blog.index')}}">Bloglar</a></li>
                         <li><a href="{{route('page.index')}}">Sayfalar</a></li>
                         <li><a href="{{route('slider.index')}}">Slider</a></li>
@@ -241,11 +243,9 @@ desired effect
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Anything you want
-        </div>
+
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>E-Berber <a href="#">Admin</a>.</strong>
     </footer>
 
     <!-- Control Sidebar -->

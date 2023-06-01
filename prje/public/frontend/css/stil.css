@@ -13,7 +13,7 @@
 }
 .nav-item a:hover{
     font-size: 22px;
-    transform: scale(1.2); /* Öğeyi büyütme işlemi */
+    transform: scale(1.2);
     text-shadow: 0px 0px 20px white ;
 }
 .logo{
@@ -34,9 +34,9 @@ giris{
     background-color:#FFE7A0;
 
 }
-cusdüg1 {
+.cusdüg1 {
     font-size: 17px;
-    padding: 0.5em 2em;
+    padding: 1em;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     background: #FFE7A0;
@@ -45,7 +45,7 @@ cusdüg1 {
     transition: background 500ms;
 }
 
-cusdüg1:hover {
+.cusdüg1:hover {
     text-shadow: 0px 0px 20px  #00b3ee;
     box-shadow: 0px 0px 10px white;
     background: linear-gradient(90deg, #FFE7A0 0%, #FFF5B8 100%);
@@ -76,6 +76,7 @@ body{
     background-color: #1a1a1a;
     border-radius:20px;
     transition: all .2s;
+    text-shadow: 0px 0px 5vh white;
 
 }
 
@@ -89,6 +90,23 @@ body{
 }
 .paketozel li{
     list-style: none;
-    text-align: center;
+
+
+}
+.paketresim{
+    width: 20vh;
+    height: 20vh;
+    margin-top: 20px;
+    object-fit: scale-down;
+}
+@media screen and (max-width: 935px) {
+    .navbar-collapse{
+        background: linear-gradient(90deg, #0b58a2 0%, #00b3ee 100%);
+        border-radius: 0px 0px 35px 35px;
+
+    }
+    .nav-item a:hover{
+        transform: scale(1);
+    }
 }
 
