@@ -52,7 +52,8 @@
         </div>
     </div>
     <cusdüg1 class="m-5">
-        <a>Berber Giriş</a>
+     
+        <a >Berber Giriş</a>
     </cusdüg1>
 </nav>
 <div style="margin-bottom: 40px"></div>

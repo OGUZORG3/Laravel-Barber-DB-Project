@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+
+
+
+
+
+
+
 Route::namespace('Frontend')->group(function () {
     Route::get('/','\App\Http\Controllers\Frontend\DefaultController@index')->name('home.Index');
 
@@ -26,9 +36,23 @@ Route::namespace('Frontend')->group(function () {
     Route::get('/contact','\App\Http\Controllers\Frontend\DefaultController@contact')->name('contact.Detail');
     Route::post('/contact','\App\Http\Controllers\Frontend\DefaultController@sendMail');
     Route::post('/message','\App\Http\Controllers\Backend\MessagesController@message')->name('message.Send');
-   // Route::post('/veriler', 'VeriController@store')->name('veriler.store');
+   
+   
+
 
 });
+//Berber admin
+Route::get('/berber','\App\Http\Controllers\BerberBackend\DefaultController@index')->name('berber.index');
+Route::get('/berber/settings','\App\Http\Controllers\BerberBackend\SettingsController@index')->name('berber.settings');
+Route::get('/berber/blog','\App\Http\Controllers\BerberBackend\BlogController@index')->name('berber.blog');
+Route::post('/berber/sortable','\App\Http\Controllers\BerberBackend\BlogController@sortable')->name('berber.sortable');
+Route::get('/berber/blog/create','\App\Http\Controllers\BerberBackend\BlogController@create')->name('berber.create');
+Route::post('/berber/blog/store','\App\Http\Controllers\BerberBackend\BlogController@store')->name('berber.store');
+Route::post('/berber/blog/update{id}','\App\Http\Controllers\BerberBackend\BlogController@update')->name('berber.update');
+Route::get('/berber/blog/edit{id}','\App\Http\Controllers\BerberBackend\BlogController@edit')->name('berber.edit');
+Route::get('/berber/blog/destroy{id}','\App\Http\Controllers\BerberBackend\BlogController@destroy')->name('berber.delete');
+
+
 
 Route::get('admin', 'Backend\DefaultController@index')->name('admin.Index');
 Route::namespace ('Backend')->group(function () {
@@ -71,7 +95,14 @@ Route::namespace('Backend')->group(function() {
         Route::get('/mesaj','\App\Http\Controllers\Backend\MessagesController@mesaj')->name('Message');
         });
     });
+
+ 
+
 });
+
+
+
+
 
 
 Auth::routes();
