@@ -44,15 +44,10 @@ Route::namespace('Frontend')->group(function () {
 //Berber admin
 Route::get('/berber','\App\Http\Controllers\BerberBackend\DefaultController@index')->name('berber.index');
 Route::get('/berber/settings','\App\Http\Controllers\BerberBackend\SettingsController@index')->name('berber.settings');
-Route::get('/berber/blog','\App\Http\Controllers\BerberBackend\BlogController@index')->name('berber.blog');
-Route::post('/berber/sortable','\App\Http\Controllers\BerberBackend\BlogController@sortable')->name('berber.sortable');
-Route::get('/berber/blog/create','\App\Http\Controllers\BerberBackend\BlogController@create')->name('berber.create');
-Route::post('/berber/blog/store','\App\Http\Controllers\BerberBackend\BlogController@store')->name('berber.store');
-Route::post('/berber/blog/update{id}','\App\Http\Controllers\BerberBackend\BlogController@update')->name('berber.update');
-Route::get('/berber/blog/edit{id}','\App\Http\Controllers\BerberBackend\BlogController@edit')->name('berber.edit');
+
 Route::get('/berber/logout','\App\Http\Controllers\BerberBackend\DefaultController@logout')->name('berber.logout');
 Route::get('/berber/login','\App\Http\Controllers\BerberBackend\DefaultController@login')->name('berber.login');
-
+Route::resource('bblog','\App\Http\Controllers\BerberBackend\BblogController');
 
 
 Route::get('admin', 'Backend\DefaultController@index')->name('admin.Index');

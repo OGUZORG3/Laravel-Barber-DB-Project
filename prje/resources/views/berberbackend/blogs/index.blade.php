@@ -7,7 +7,7 @@
                 <h3 class="box-title">blog</h3>
 
                 <div align="right">
-                    <a href="{{route('berber.create')}}"><button class="btn btn-success">Ekle</button></a>
+                    <a href="{{route('bblog.create')}}"><button class="btn btn-success">Ekle</button></a>
                 </div>
             </div>
             <div class="box-body">
@@ -22,7 +22,7 @@
                     @foreach($data['blog'] as $blog)
                         <tr id="item-{{$blog->id}}">
                             <td class="sortable">{{$blog['blog_title']}}</td>
-                            <td width="5"><a href="{{route('berber.edit',$blog->id)}}"><i class="fa fa-pencil-square"></i></a></td>
+                            <td width="5"><a href="{{route('bblog.edit',$blog->id)}}"><i class="fa fa-pencil-square"></i></a></td>
                             <td width="5"><a href="javascript:void(0)"><i id="@php echo $blog->id @endphp"
                                                                 class="fa fa-trash-o"></i></a>
                             </td>
@@ -53,7 +53,7 @@
                     $.ajax({
                         type: "POST",
                         data: data,
-                        url: "{{route('berber.sortable')}}",
+                        url: ,
                         success: function (msg) {
                             // console.log(msg);
                             if (msg) {

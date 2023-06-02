@@ -187,7 +187,7 @@ desired effect
                 <li class="active"><a href="{{route('berber.index')}}"><i class="fa fa-link"></i> <span>anasayfa</span></a></li>
                 
                 <li><a href="{{route('berber.settings')}}"><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
-                <li><a href="{{route('berber.blog')}}"><i class="fa fa-link"></i> <span>Bloglar</span></a></li>
+                <li><a href="{{route('bblog.index')}}"><i class="fa fa-link"></i> <span>Bloglar</span></a></li>
              
             </ul>
             <!-- /.sidebar-menu -->

@@ -7,9 +7,11 @@
                 <h3 class="box-title">Blog Düzenle</h3>
             </div>
             <div class="box-body">
-            <form action="{{route('berber.update',$blogs->id)}}" method="post" 
+            <form action="{{route('bblog.update',$blogs->id)}}" method="get" 
             enctype="multipart/form-data">
-                @csrf
+
+                @CSRF
+                @method('GET')
 
 
 
