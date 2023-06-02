@@ -7,11 +7,9 @@
                 <h3 class="box-title">Blog Düzenle</h3>
             </div>
             <div class="box-body">
-            <form action="{{route('bblog.update',$blogs->id)}}" method="get" 
-            enctype="multipart/form-data">
-
-                @CSRF
-                @method('GET')
+            <form action="{{route('bblog.update',$blogs->id)}}" method="post" enctype="multipart/form-data">
+            @CSRF
+            @method('PUT')
 
 
 

@@ -89,6 +89,8 @@ Route::namespace('Backend')->group(function() {
         Route::resource('user', '\App\Http\Controllers\Backend\UserController');
         //mesaj
         Route::get('/mesaj','\App\Http\Controllers\Backend\MessagesController@mesaj')->name('Message');
+        //paket
+        Route::resource('paket','\App\Http\Controllers\Backend\PaketController');
         });
     });
 
