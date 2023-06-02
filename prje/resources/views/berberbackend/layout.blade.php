@@ -91,7 +91,7 @@ desired effect
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a  class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>B</b>Y</span>
             <!-- logo for regular state and mobile devices -->
@@ -145,10 +145,10 @@ desired effect
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{route('user.edit',Auth::user()->id)}}" class="btn btn-default btn-flat">Profile</a>
+                                    <a  class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('admin.Logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="{{route('berber.logout')}}" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -168,12 +168,10 @@ desired effect
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    @if(@isset(Auth::user()->user_file))
-                    <img src="../../images/users/{{Auth::user()->user_file}}" class="img-circle" alt="User Image">
-                    @endif
+                   
                 </div>
                 <div class="pull-left info">
-                    <p>{{Auth::user()->name}}</p>
+                    
                     
                     <p></p>
                     <!-- Status -->

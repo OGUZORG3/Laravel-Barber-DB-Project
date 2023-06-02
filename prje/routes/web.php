@@ -50,7 +50,8 @@ Route::get('/berber/blog/create','\App\Http\Controllers\BerberBackend\BlogContro
 Route::post('/berber/blog/store','\App\Http\Controllers\BerberBackend\BlogController@store')->name('berber.store');
 Route::post('/berber/blog/update{id}','\App\Http\Controllers\BerberBackend\BlogController@update')->name('berber.update');
 Route::get('/berber/blog/edit{id}','\App\Http\Controllers\BerberBackend\BlogController@edit')->name('berber.edit');
-Route::get('/berber/blog/destroy{id}','\App\Http\Controllers\BerberBackend\BlogController@destroy')->name('berber.delete');
+Route::get('/berber/logout','\App\Http\Controllers\BerberBackend\DefaultController@logout')->name('berber.logout');
+Route::get('/berber/login','\App\Http\Controllers\BerberBackend\DefaultController@login')->name('berber.login');
 
 
 
