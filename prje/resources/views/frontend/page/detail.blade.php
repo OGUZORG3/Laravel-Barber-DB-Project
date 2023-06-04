@@ -49,7 +49,9 @@
 
         </div>
         <!-- /.row -->
-
+        <div class="sayfa mb-5" >
+            {{$pageList->links()}}
+        </div>
     </div>
 
 @endsection

@@ -99,6 +99,51 @@ body{
     margin-top: 20px;
     object-fit: scale-down;
 }
+.sayfa>nav>div.hidden>div>span.relative>span>span.relative>svg{
+    display: none!important;
+
+}
+.sayfa>nav>div.hidden>div>span.relative>a>svg{
+  display: none!important;
+
+}
+.sayfa>nav>div.hidden{
+ margin-left: 10px;
+
+}
+.sayfa>nav{
+   position: relative!important;
+    align-content: flex-start;
+    display: flex!important;
+    margin-bottom: 20px;
+
+}
+.sayfa>nav>div.hidden>div>p{
+ display: flex;
+   flex-direction: row-reverse;
+    margin: 4px;
+
+}
+.sayfa>nav>div.hidden>div>p{
+  display: none;
+}
+.eimg{
+    width: 20vh;
+    height: 20vh;
+    object-fit: scale-down;
+    margin-top:50%;
+    margin-left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.ekip{
+    border-radius: 25px;
+}
+.yazıtas{
+    overflow: hidden;
+
+}
 @media screen and (max-width: 935px) {
     .navbar-collapse{
         background: linear-gradient(90deg, #0b58a2 0%, #00b3ee 100%);
@@ -108,5 +153,7 @@ body{
     .nav-item a:hover{
         transform: scale(1);
     }
+
 }
+
 

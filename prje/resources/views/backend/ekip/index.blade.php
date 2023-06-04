@@ -1,7 +1,7 @@
 @extends('backend.layouth')
 @section('content')
     <section class="content-header">
-        <a href="{{route('paket.create')}}"><button class=" btn btn-success float-right border-0 rounded">Ekle</button></a>
+        <a href="{{route('ekip.create')}}"><button class=" btn btn-success float-right border-0 rounded">Ekle</button></a>
         <div class="table-responsive">
             <table class="table table-striped
         table-hover
@@ -11,25 +11,27 @@
                 <thead class="table-light">
                 <h1>Paketler</h1>
                 <tr>
-                    <th>Paket Resim</th>
-                    <th>Paket AD</th>
-                    <th>Paket icerik</th>
-                    <th>Paket Özellik</th>
-                    <th>Paket Fiyat</th>
+                    <th>Ekip Resim</th>
+                    <th>Ekip isim</th>
+                    <th>Ekip Soy isim</th>
+                    <th>Ekip pozisyon</th>
+                    <th>Ekip unvan</th>
+                    <th>Ekip mail</th>
                     <th>Düzenle</th>
                     <th>Sil</th>
                 </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                @foreach($data['packages'] as $paket)
-                    <tr id="item-{{$paket->id}}" class="table-primary" >
-                        <td><img src="../../images/pack/{{$paket->paket_file}}" class="paketresim"></td>
-                        <td>{{$paket->paket_ad}}</td>
-                        <td>{{$paket->paket_icerik}}</td>
-                        <td>{!! $paket->paket_ozellik !!}</td>
-                        <td>{{$paket->paket_fiyat}}</td>
-                        <td><a href="{{route('paket.edit',$paket->id)}}"><i class="fa fa-pencil-square"></i></a></td>
-                        <td><a href="javascript:void(0)"><i id="{{$paket->id}}" class="fa fa-trash-o"></i></a></td>
+                @foreach($ekip['ekip'] as $Eüye)
+                    <tr id="item-{{$Eüye->id}}" class="table-primary" >
+                        <td><img src="../../images/ekip/{{$Eüye->ekip_file}}" class="paketresim"></td>
+                        <td>{{$Eüye->ekip_isim}}</td>
+                        <td>{{$Eüye->ekip_soyisim}}</td>
+                        <td>{{$Eüye->ekip_pozisyon }}</td>
+                        <td>{{$Eüye->ekip_unvan}}</td>
+                        <td>{{$Eüye->ekip_mail}}</td>
+                        <td><a href="{{route('ekip.edit',$Eüye->id)}}"><i class="fa fa-pencil-square"></i></a></td>
+                        <td><a href="javascript:void(0)"><i id="{{$Eüye->id}}" class="fa fa-trash-o"></i></a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -38,7 +40,7 @@
                 </tfoot>
             </table>
             <div class="sayfa">
-                {{$data['packages']->links()}}
+                {{$ekip['ekip']->links()}}
             </div>
         </div>
 
@@ -58,7 +60,7 @@
 
                         $.ajax({
                             type: "DELETE",
-                            url: "paket/" + destroy_id,
+                            url: "ekip/" + destroy_id,
                             success: function (msg) {
                                 if (msg) {
                                     $("#item-" + destroy_id).remove();

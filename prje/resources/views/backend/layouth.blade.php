@@ -215,6 +215,7 @@ desired effect
                         <li><a href="{{route('blog.index')}}">Bloglar</a></li>
                         <li><a href="{{route('page.index')}}">Sayfalar</a></li>
                         <li><a href="{{route('slider.index')}}">Slider</a></li>
+                        <li><a href="{{route('ekip.index')}}">Ekip</a></li>
                     </ul>
                 </li>
             </ul>
@@ -229,13 +230,7 @@ desired effect
         <br>
         @yield('content')
         <!-- Main content -->
-        <section class="content container-fluid">
 
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->
-
-        </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->

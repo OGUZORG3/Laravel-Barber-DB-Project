@@ -34,6 +34,10 @@
                     </thead>
                 </table>
             </div>
+
+        </div>
+        <div class="sayfa">
+            {{$data['page']->links()}}
         </div>
     </section>
 

@@ -39,26 +39,18 @@
                 </li>
 
                 <li class="nav-item hover-Devredısı">
-                    <a class="nav-link" href="../public/page/{{$slug}}">Sayfalar</a>
+                    <a class="nav-link" href="{{route('page.Detail',$slug)}}">Sayfalar</a>
                 </li>
 
                 <li class="nav-item hover-Devredısı">
                     <a class="nav-link" href="{{route('contact.Detail')}}">Bize Ulaşın</a>
                 </li>
                 <li class="cusdüg1">
-                    <a>Berber Giriş</a>
+                    <a href="{{route('berber.login')}}">Berber Giriş</a>
                 </li>
             </ul>
         </div>
     </div>
-<<<<<<< HEAD
-    <cusdüg1 class="m-5">
-     
-        <a href="{{route('admin.Login')}}">Berber Giriş</a>
-    </cusdüg1>
-=======
-
->>>>>>> 4a19b65a8924fa1368b4a6ba0c56a334867b5947
 </nav>
 <div style="margin-bottom: 40px"></div>
 

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 @section('title',"E-Berberim")
 @section('content')
-    <header>
+    <header xmlns="http://www.w3.org/1999/html">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
             <div class="carousel-inner" role="listbox">
@@ -73,13 +73,15 @@
         <!-- /.row -->
 
         <hr>
-        @if(!empty($data['packages']))
+
+
         <h1>Paketlerimiz</h1>
 
         <section class="justify-content-center align-self-center d-flex">
             <div class="row">
-                @foreach($data['packages'] as $paket)
-                <div class="col-lg-4 col-sm-6 m-auto">
+                @foreach($paket['packages'] as $paket)
+                    @if($loop->iteration <= 3)
+                <div class="col-lg-4 col-sm-6 ">
                     <div class="kart">
                         <div class="kart2 paketozel ">
                             <img src="../images/pack/{{$paket->paket_file}}"  class="card-img-top paketresim ">
@@ -97,16 +99,38 @@
                         </div>
                     </div>
                 </div>
+                    @else
+                        <button class="btn btn-info m-5">Daha Fazla Paket Görmek İstersiniz</button>
+                    @endif
                 @endforeach
             </div>
 
         </section>
-        @endif
+
         <section>
 
         </section>
+        <section>
+            <h1>Ekibimiz</h1>
+            <div class="card-group ">
+               @foreach($data['ekip'] as $ekip)
+                    <div class="col-lg-3 col-sm-6 m-auto">
+                <div class="card bg-transparent border-0 m-1 ekip">
+                    <div class="card-body bg-dark  ekip">
+                    <img src="../images/ekip/{{$ekip->ekip_file}}"  class=" eimg" alt="...">
+
+                        <h5 class="card-title">{{$ekip->ekip_isim}} {{$ekip->ekip_soyisim}}</h5>
+                        <p class="card-text">{{$ekip->ekip_posziyon}}</p>
+                             <a  href="mailto:{{$ekip->ekip_mail}}"><p class="yazıtas">{{$ekip->ekip_mail}}</p></a>
+                        <p class="card-text"><small class="text-muted">{{$ekip->ekip_unvan}}</small></p>
+                    </div>
+                </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
         <!-- Call to Action Section -->
-        <div class="row mb-4">
+        <div class="row m-4">
             <div class="col-md-8">
 
             </div>

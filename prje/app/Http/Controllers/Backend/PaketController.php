@@ -13,7 +13,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $data['packages']=Packages::all();
+        $data['packages']=Packages::orderBy('id')->paginate(3);
         return view('backend.paketler.index')->with(compact('data'));
     }
 
@@ -112,7 +112,9 @@ class PaketController extends Controller
                 @unlink(public_path($path));
             }
 
-        }else {
+        }
+        else
+        {
             $paket=Packages::Where('id',$id)->update(
                 [
                     "paket_ad" => $request->paket_ad,
