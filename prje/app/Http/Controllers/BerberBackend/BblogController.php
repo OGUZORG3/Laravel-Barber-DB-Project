@@ -25,7 +25,7 @@ class BblogController extends Controller
      */
     public function create()
     {
-        
+        return view('berberbackend.blogs.create');  
     }
 
     /**
@@ -33,7 +33,49 @@ class BblogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (strlen($request->blog_slug)>3)
+        {
+            $slug=Str::slug($request->blog_slug);
+        } else {
+            $slug=Str::slug($request->blog_title);
+        }
+  
+  
+        if ($request->hasFile('blog_file'))
+         {
+            $request->validate([
+                'blog_title' => 'required',
+                'blog_content' => 'required',
+                'blog_file' => 'required|image|mimes:jpg,jpeg,png|max:2048'
+            ]);
+  
+            $file_name=uniqid().'.'.$request->blog_file->getClientOriginalExtension();
+            $request->blog_file->move(public_path('../images/blogs'),$file_name);
+  
+          } else {
+              $file_name=null;
+          }
+  
+  
+  
+  
+        
+        $blog=Blogs::insert(
+          [
+              "blog_title" => $request->blog_title,
+              "blog_slug" => $slug, //işlem
+              "blog_file" => $file_name,//İşlem
+              "blog_content" => $request->blog_content,
+              "blog_status" => $request->blog_status,
+          ]
+      );
+  
+      if ($blog)
+      {
+          return redirect(route('berber.blog'))->with('success','İşlem Başarılı');
+      }
+      return back()->with('error','İşlem Başarısız');
+  
     }
 
     /**
@@ -130,6 +172,11 @@ class BblogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $blog=Blogs::find(intval($id));
+        if($blog->delete())
+        {
+          echo 1;
+        }
+        echo 0;
     }
 }

@@ -39,65 +39,65 @@
     <script type="text/javascript">
         $(function () {
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+$('#sortable').sortable({
+    revert: true,
+    handle: ".sortable",
+    stop: function (event, ui) {
+        var data = $(this).sortable('serialize');
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: "{{route('blog.Sortable')}}",
+            success: function (msg) {
+                // console.log(msg);
+                if (msg) {
+                    alertify.success("İşlem Başarılı");
+                } else {
+                    alertify.error("İşlem Başarısız");
                 }
-            });
-
-            $('#sortable').sortable({
-                revert: true,
-                handle: ".sortable",
-                stop: function (event, ui) {
-                    var data = $(this).sortable('serialize');
-                    $.ajax({
-                        type: "POST",
-                        data: data,
-                        url: ,
-                        success: function (msg) {
-                            // console.log(msg);
-                            if (msg) {
-                                alertify.success("İşlem Başarılı");
-                            } else {
-                                alertify.error("İşlem Başarısız");
-                            }
-                        }
-                    });
-
-                }
-            });
-            $('#sortable').disableSelection();
-
+            }
         });
 
-        $(".fa-trash-o").click(function () {
-            destroy_id = $(this).attr('id');
+    }
+});
+$('#sortable').disableSelection();
 
-            alertify.confirm('Silme işlemini onaylayın!', 'Bu işlem geri alınamaz',
-                function () {
+});
 
-                    $.ajax({
-                        type:"DELETE",
-                        url:"blog/destroy"+destroy_id,
-                        success: function (msg) {
-                            if (msg)
-                            {
-                                $("#item-"+destroy_id).remove();
-                                alertify.success("Silme İşlemi Başarılı");
+$(".fa-trash-o").click(function () {
+destroy_id = $(this).attr('id');
 
-                            } else {
-                                alertify.error("İşlem Tamamlanamadı");
-                            }
-                        }
-                    });
+alertify.confirm('Silme işlemini onaylayın!', 'Bu işlem geri alınamaz',
+    function () {
 
-                },
-                function () {
-                    alertify.error('Silme işlemi iptal edildi')
+        $.ajax({
+            type:"DELETE",
+            url:"bblog/"+destroy_id,
+            success: function (msg) {
+                if (msg)
+                {
+                    $("#item-"+destroy_id).remove();
+                    alertify.success("Silme İşlemi Başarılı");
+
+                } else {
+                    alertify.error("İşlem Tamamlanamadı");
                 }
-            )
-
+            }
         });
+
+    },
+    function () {
+        alertify.error('Silme işlemi iptal edildi')
+    }
+)
+
+});
     </script>
 
 

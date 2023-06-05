@@ -7,10 +7,10 @@
                 <h3 class="box-title">Blog Ekle</h3>
             </div>
             <div class="box-body">
-            <form action="{{route('berber.store')}}" method="post" 
+            <form action="{{route('bblog.store')}}" method="post" 
             enctype="multipart/form-data">
                 @csrf
-
+                
 
                 <div class="form-group">
                             <label>Resim Seç</label>

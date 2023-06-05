@@ -13,6 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        $data['blog'] = Blogs::all()->sortBy('blog_must');
         $data['blog'] = Blogs::orderBy('blog_must')->paginate(7);
         return view('backend.blogs.index',compact('data'));
     }

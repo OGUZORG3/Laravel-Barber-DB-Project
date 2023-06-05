@@ -42,4 +42,10 @@ class DefaultController extends Controller
        return redirect(route('admin.Login'))->with('success','Güvenli Çıkış Yapıldı');
    }
 
+   public function kayit()
+   {
+
+       return view('backend.default.kayit');
+       
+   }
 }
