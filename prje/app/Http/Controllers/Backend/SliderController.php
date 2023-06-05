@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $data['slider'] = Sliders::all()->sortBy('slider_must');
+        $data['slider'] = Sliders::orderBy('slider_must')->paginate(2);
         return view('backend.sliders.index',compact('data'));
     }
 

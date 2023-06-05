@@ -13,7 +13,7 @@ class pageController extends Controller
      */
     public function index()
     {
-        $data['page'] = pages::all()->sortBy('page_must');
+        $data['page'] = pages::orderBy('page_must')->paginate(7);
         return view('backend.pages.index',compact('data'));
     }
 

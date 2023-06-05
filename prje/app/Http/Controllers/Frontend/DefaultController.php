@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ekips;
 use App\Models\Packages;
 use Illuminate\Http\Request;
 use App\Models\Sliders;
@@ -17,8 +18,9 @@ class DefaultController extends Controller
         $data['blog'] = Blogs::all()->sortby('blog_must');
       //  $data['message'] = messages::all()->sortby('id');
         $data['slider'] = Sliders::all()->sortby('slider_must');
-        $data['packages']= Packages::all()->sortby('id');
-        return view('frontend.default.index', compact('data'));
+        $paket['packages']= Packages::all()->sortby('id');
+        $data['ekip']= ekips::all()->sortby('id');
+        return view('frontend.default.index', compact('data','paket'));
     }
 
     public function contact()
@@ -26,6 +28,6 @@ class DefaultController extends Controller
         return view('frontend.default.contact');
     }
 
-   
-    
+
+
 }

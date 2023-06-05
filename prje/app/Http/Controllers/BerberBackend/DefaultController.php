@@ -60,7 +60,7 @@ class DefaultController extends Controller
         );
 
         if ($user) {
-            return redirect(route('user.index'))->with('success', 'İşlem Başarılı');
+            return redirect(route('berber.login'))->with('success', 'İşlem Başarılı');
         }
         return back()->with('error', 'İşlem Başarısız');
     }

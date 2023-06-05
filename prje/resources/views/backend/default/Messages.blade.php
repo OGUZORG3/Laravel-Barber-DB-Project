@@ -31,6 +31,9 @@
 
                 </tfoot>
         </table>
+          <div class="sayfa m-2 ">
+              {{$data['adminMessages']->links()}}
+          </div>
       </div>
 
     </section>

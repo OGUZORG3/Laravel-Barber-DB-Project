@@ -36,6 +36,9 @@
                 </table>
             </div>
         </div>
+        <div class="sayfa">
+            {{$data['slider']->links()}}
+        </div>
     </section>
 
     <script type="text/javascript">

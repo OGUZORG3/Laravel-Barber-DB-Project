@@ -31,15 +31,9 @@
             </div>
         </div>
             @endforeach
-
-
-
-
-
-
-
-
-
+        <div  class="sayfa">
+        {{$data['blog']->links()}}
+        </div>
     </div>
 
 @endsection

@@ -10,8 +10,7 @@ class MessagesController extends Controller
 {
     public function mesaj()
     {
-      $data['adminMessages']=Messages::all()->sortBy('id');
-      
+      $data['adminMessages']=Messages::orderBy('id')->paginate(9);
         return view('backend.default.Messages',compact('data'));
     }
     public function message(Request $request)
@@ -21,12 +20,6 @@ class MessagesController extends Controller
         'messages_mail' => 'required',
         'messages_tel' => 'required',
         'messages_mesaj' => 'required'
-
-
-
-        
-
-
     ]);
 
 
@@ -34,12 +27,8 @@ class MessagesController extends Controller
       'messages_name' => $request->messages_name,
       'messages_mail' => $request->messages_mail,
       'messages_tel' => $request->messages_tel,
-      'messages_mesaj' => $request->messages_mesaj 
+      'messages_mesaj' => $request->messages_mesaj
     ]);
     return back()->with('success',"Mail Başarıyla Gönderildi");
-    
-
-
-
  }
 }

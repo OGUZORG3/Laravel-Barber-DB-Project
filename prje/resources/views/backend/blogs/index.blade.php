@@ -33,6 +33,10 @@
                     </thead>
                 </table>
             </div>
+
+        </div>
+        <div class="sayfa">
+            {{$data['blog']->links()}}
         </div>
     </section>
 

@@ -36,8 +36,8 @@ Route::namespace('Frontend')->group(function () {
     Route::get('/contact','\App\Http\Controllers\Frontend\DefaultController@contact')->name('contact.Detail');
     Route::post('/contact','\App\Http\Controllers\Frontend\DefaultController@sendMail');
     Route::post('/message','\App\Http\Controllers\Backend\MessagesController@message')->name('message.Send');
-   
-   
+
+
 
 
 });
@@ -98,10 +98,12 @@ Route::namespace('Backend')->group(function() {
         Route::get('/mesaj','\App\Http\Controllers\Backend\MessagesController@mesaj')->name('Message');
         //paket
         Route::resource('paket','\App\Http\Controllers\Backend\PaketController');
+        //ekip
+        Route::resource('ekip','\App\Http\Controllers\Backend\EkipController');
         });
     });
 
- 
+
 
 });
 
