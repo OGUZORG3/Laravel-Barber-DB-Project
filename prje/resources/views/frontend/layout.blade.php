@@ -45,7 +45,7 @@
                 <li class="nav-item hover-Devredısı">
                     <a class="nav-link" href="{{route('contact.Detail')}}">Bize Ulaşın</a>
                 </li>
-                <li class="cusdüg1">
+                <li class="cusdüg1" >
                     <a>Berber Giriş</a>
                 </li>
             </ul>
