@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Kayıt</title>
+    <title>AdminLTE 2 | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -46,79 +46,59 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a style="color:white; " href="{{route('berber.kayit')}}"><b>Kayıt</b> OL</a>
+        <a style="color:white; " href="{{route('berber.login')}}"><b>E-</b> Berberim</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Kullanıcı Adı ve Şifrenizi Giriniz.</p>
 
-      
+        @if(Session::has('error'))
+            <div class="alert alert-danger">
+                {{session('error')}}
+            </div>
+            @elseif(Session::has('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+        @endif
 
-        <form action="{{route('berber.store')}}" method="post"
-                      enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="form-group">
-                        <label>Resim Seç</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  name="user_file"  type="file">
-                            </div>
-                        </div>
+        <form action="{{route('berber.Authenticate')}}" method="post">
+            @CSRF
+            <div class="form-group has-feedback">
+                <input type="email" required class="form-control" name="email" placeholder="Kullanıcı Adı"
+                       value="{{old('email')}}">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" required class="form-control" name="password" placeholder="Şifre">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" name="remember_me" {{old('remember_me') ? 'checked' : '' }}> Beni
+                            Hatırla
+                        </label>
                     </div>
+                </div>
+
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Giriş Yap</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
 
 
-                    <div class="form-group">
-                        <label>Ad Soyad</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="text" name="name">
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-xs-4">
 
-                    <div class="form-group">
-                        <label>Kullanıcı Adı (Email)</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="email" name="email">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Şifre</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="password" name="password">
-                            </div>
-                        </div>
-                    </div>
+                    <a type="submit" href="{{route('berber.kayit')}}"
+                     class="btn btn-primary btn-block btn-flat">Kayıt ol</a>
+                </div>
 
 
-                    <div class="form-group">
-
-
-                        <div class="form-group">
-                            <label>Durum</label>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <select name="user_status" >
-                                        <option value="1">Aktif</option>
-                                        <option value="0">Pasif</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                            <div align="right" class="box-footer">
-                                <button type="submit" class="btn btn-success">Kayıt Ol</button>
-                            </div>
-                        </div>
-
-
-                </form>
-        
     </div>
     <!-- /.login-box-body -->
 </div>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\BerberBackend;
 
+use App\Models\berber_blog;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Blogs;
+
 
 class BblogController extends Controller
 {
@@ -14,9 +16,7 @@ class BblogController extends Controller
      */
     public function index()
     {
-        $data['blog'] = Blogs::all()->sortBy('blog_must');
-     
-
+        $data['blog']=berber_blog::where('blog_creator_id',Auth::user()->id)->orderBy('id')->paginate(2);
         return view('berberbackend.blogs.index',compact('data'));
     }
 
@@ -25,7 +25,7 @@ class BblogController extends Controller
      */
     public function create()
     {
-        return view('berberbackend.blogs.create');  
+        return view('berberbackend.blogs.create');
     }
 
     /**
@@ -39,8 +39,8 @@ class BblogController extends Controller
         } else {
             $slug=Str::slug($request->blog_title);
         }
-  
-  
+
+
         if ($request->hasFile('blog_file'))
          {
             $request->validate([
@@ -48,20 +48,23 @@ class BblogController extends Controller
                 'blog_content' => 'required',
                 'blog_file' => 'required|image|mimes:jpg,jpeg,png|max:2048'
             ]);
-  
+
             $file_name=uniqid().'.'.$request->blog_file->getClientOriginalExtension();
             $request->blog_file->move(public_path('../images/blogs'),$file_name);
-  
+
           } else {
               $file_name=null;
           }
-  
-  
-  
-  
-        
-        $blog=Blogs::insert(
+
+
+
+
+
+        $blog=berber_blog::insert(
           [
+              "created_at" => now(),
+              "updated_at" => now(),
+              "blog_creator_id" => Auth::user()->id,
               "blog_title" => $request->blog_title,
               "blog_slug" => $slug, //işlem
               "blog_file" => $file_name,//İşlem
@@ -69,13 +72,13 @@ class BblogController extends Controller
               "blog_status" => $request->blog_status,
           ]
       );
-  
+
       if ($blog)
       {
           return redirect(route('berber.blog'))->with('success','İşlem Başarılı');
       }
       return back()->with('error','İşlem Başarısız');
-  
+
     }
 
     /**
@@ -91,8 +94,8 @@ class BblogController extends Controller
      */
     public function edit(string $id)
     {
-      
-        $blogs=Blogs::where('id',$id)->first();
+
+        $blogs=berber_blog::where('id',$id)->first();
 
         return view('berberbackend.blogs.edit')->with('blogs',$blogs);
     }
@@ -108,63 +111,64 @@ class BblogController extends Controller
         } else {
             $slug=Str::slug($request->blog_title);
         }
-  
-  
+
+
         if ($request->hasFile('blog_file'))
          {
             $request->validate([
                 'blog_title' => 'required',
                 'blog_content' => 'required',
-                'blog_file' => 'required|image|mimes:jpg,jpeg,png|max:2048'
             ]);
-  
+
             $file_name=uniqid().'.'.$request->blog_file->getClientOriginalExtension();
             $request->blog_file->move(public_path('../images/blogs'),$file_name);
-  
-  
-            $blog=Blogs::where('id',$id)->update(
+
+
+            $blog=berber_blog::where('id',$id)->update(
               [
+                  "updated_at" => now(),
                   "blog_title" => $request->blog_title,
-                  "blog_slug" => $slug, //işlem
-                  "blog_file" => $file_name,//İşlem
+                  "blog_slug" => $slug,
+                  "blog_file" => $file_name,
                   "blog_content" => $request->blog_content,
                   "blog_status" => $request->blog_status,
               ]
           );
-          
+
           $path='../images/blogs/'.$request->old_file;
           if (file_exists($path))
           {
               @unlink(public_path($path));
           }
-  
-  
-  
-  
+
+
+
+
           } else {
-            $blog=Blogs::where('id',$id)->update(
+            $blog=berber_blog::where('id',$id)->update(
               [
+                  "updated_at" => now(),
                   "blog_title" => $request->blog_title,
                   "blog_slug" => $slug, //işlem
                   "blog_content" => $request->blog_content,
                   "blog_status" => $request->blog_status,
               ]
-          );   
-          }
-  
-  
-  
-  
-        
-        
-  
+          );
+        }
+
+
+
+
+
+
+
       if ($blog)
       {
           return redirect(route('berber.blog'))->with('success','İşlem Başarılı');
       }
       return back()->with('error','İşlem Başarısız');
-  
-  
+
+
     }
 
     /**
@@ -172,7 +176,7 @@ class BblogController extends Controller
      */
     public function destroy(string $id)
     {
-        $blog=Blogs::find(intval($id));
+        $blog=berber_blog::find(intval($id));
         if($blog->delete())
         {
           echo 1;

@@ -20,16 +20,7 @@ class Admin
         {
             return $next($request);
 
-        } 
-        
-        else if (!\Auth::guest() && \Auth::user()->role=='user')
-        {
-            return redirect(route('berber.login'));
-
         }
-        
-        
-        
         else {
             return redirect(route('admin.Login'))->with('error','Erişim Yetkiniz Yok');
         }

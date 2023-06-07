@@ -39,19 +39,16 @@
                 </li>
 
                 <li class="nav-item hover-Devredısı">
-                    <a class="nav-link" href="{{route('page.Detail',$slug)}}">Sayfalar</a>
+                    <a class="nav-link" href="{{route('page.Detail',$slug)}}">Haberler</a>
                 </li>
-
+                <li class="nav-item hover-Devredısı">
+                    <a class="nav-link" href="{{route('berberler.index')}}">Berberlerimiz</a>
+                </li>
                 <li class="nav-item hover-Devredısı">
                     <a class="nav-link" href="{{route('contact.Detail')}}">Bize Ulaşın</a>
                 </li>
-<<<<<<< HEAD
-                <li class="cusdüg1" >
-                    <a>Berber Giriş</a>
-=======
                 <li class="cusdüg1">
                     <a href="{{route('berber.login')}}">Berber Giriş</a>
->>>>>>> 07943da0ad4dcb1bc84a110eb365a870a32c9f0f
                 </li>
             </ul>
         </div>
