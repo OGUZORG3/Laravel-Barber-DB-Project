@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('berber_detays', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('berber_file');
             $table->string('berber_isim');
             $table->string('berber_soyisim');
             $table->string('berber_adres');

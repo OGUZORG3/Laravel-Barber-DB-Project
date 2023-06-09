@@ -9,22 +9,22 @@ use App\Models\Blogs;
 
 class BlogController extends Controller
 {
-   
+
     public function index()
     {
-      $data['blog'] = Blogs::all()->sortBy('blog_must');
-     
+      $data['blog'] = berber::all()->sortBy('blog_must');
+
 
       return view('berberbackend.blogs.index',compact('data'));
     }
 
-   
+
     public function create()
     {
       return view('berberbackend.blogs.create');
     }
 
-    
+
     public function store(Request $request)
     {
 
@@ -55,7 +55,7 @@ class BlogController extends Controller
 
 
 
-      
+
       $blog=Blogs::insert(
         [
             "blog_title" => $request->blog_title,
@@ -76,13 +76,13 @@ class BlogController extends Controller
 
     }
 
-  
+
     public function show(string $id)
     {
-      
+
     }
 
-   
+
     public function edit(string $id)
     {
 
@@ -92,11 +92,11 @@ class BlogController extends Controller
        return view('berberbackend.blogs.edit')->with('blogs',$blogs);
     }
 
-    
+
     public function update(Request $request, $id)
     {
-      
-      
+
+
       if (strlen($request->blog_slug)>3)
       {
           $slug=Str::slug($request->blog_slug);
@@ -126,7 +126,7 @@ class BlogController extends Controller
                 "blog_status" => $request->blog_status,
             ]
         );
-        
+
         $path='../images/blogs/'.$request->old_file;
         if (file_exists($path))
         {
@@ -144,14 +144,14 @@ class BlogController extends Controller
                 "blog_content" => $request->blog_content,
                 "blog_status" => $request->blog_status,
             ]
-        );   
+        );
         }
 
 
 
 
-      
-      
+
+
 
     if ($blog)
     {
@@ -177,7 +177,7 @@ class BlogController extends Controller
 
     }
 
-    
+
     public function destroy(string $id)
     {
       $blog=Blogs::find(intval($id));
@@ -186,7 +186,7 @@ class BlogController extends Controller
         echo 1;
       }
       echo 0;
-        
+
     }
     public function sortable()
     {

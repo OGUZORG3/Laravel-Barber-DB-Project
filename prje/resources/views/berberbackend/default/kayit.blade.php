@@ -44,80 +44,79 @@
 
 </head>
 <body class="hold-transition login-page">
+<a href="{{route('home.Index')}}"><img src="../frontend/css/return.png"  style="width: 30px;height: 30px;margin: 10px;"></a>
 <div class="login-box">
     <div class="login-logo">
-        <a style="color:white; " href="{{route('berber.kayit')}}"><b>Kayıt</b> OL</a>
+        <a style="color:white; "><b>E-Berberim</b> Kayıt</a>
     </div>
+
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Kullanıcı Adı ve Şifrenizi Giriniz.</p>
-
-
-
+        <a class="btn btn-danger" href="{{route('berber.login')}}">geri</a>
         <form action="{{route('berber.store')}}" method="post"
-                      enctype="multipart/form-data">
-                    @csrf
+              enctype="multipart/form-data">
+            @csrf
 
-                    <div class="form-group">
-                        <label>Resim Seç</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  name="user_file"  type="file">
-                            </div>
-                        </div>
+            <div class="form-group">
+                <label>Resim Seç</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input  name="user_file"  type="file">
                     </div>
+                </div>
+            </div>
 
 
-                    <div class="form-group">
-                        <label>Ad Soyad</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="text" name="name">
-                            </div>
-                        </div>
+            <div class="form-group">
+                <label>Ad Soyad</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input  type="text" name="name">
                     </div>
-
-                    <div class="form-group">
-                        <label>Kullanıcı Adı (Email)</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="email" name="email">
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Soyad</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input  type="text" name="surname">
                     </div>
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <label>Şifre</label>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input  type="password" name="password">
-                            </div>
-                        </div>
+            <div class="form-group">
+                <label>Kullanıcı Adı (Email)</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input  type="email" name="email">
                     </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Şifre</label>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input  type="password" name="password">
+                    </div>
+                </div>
+            </div>
 
 
-                    <div class="form-group">
+            <div class="form-group">
 
 
-                        <div class="form-group">
-                            <label>Durum</label>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <select name="user_status" >
-                                        <option value="1">Aktif</option>
-                                        <option value="0">Pasif</option>
-                                    </select>
-                                </div>
-                            </div>
 
 
-                            <div align="right" class="box-footer">
-                                <button type="submit" class="btn btn-success">Kayıt Ol</button>
-                            </div>
-                        </div>
 
 
-                </form>
+                    <div align="right" class="box-footer">
+                        <button type="submit" class="btn btn-success">Kayıt Ol</button>
+                    </div>
+                </div>
+
+
+        </form>
 
     </div>
     <!-- /.login-box-body -->
@@ -130,14 +129,6 @@
 <script src="../backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="../backend/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
-    });
-</script>
+
 </body>
 </html>

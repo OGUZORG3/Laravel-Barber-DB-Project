@@ -5,7 +5,7 @@
     @foreach($veri['berber'] as $berber)
 
                          <div class="col-3">
-                            <div class="card" style="border-radius: 15px;">
+                            <div class="card my-3" style="border-radius: 15px;">
                                 <div class="card-body text-center">
                                     <div class="mt-3 mb-4">
                                         <img src="../images/users/{{$berber->user_file}}"

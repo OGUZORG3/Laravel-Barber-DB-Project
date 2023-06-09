@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('berber_blog', function (Blueprint $table) {
+        Schema::create('berber_blogs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('blog_title')->nullable();
             $table->string('blog_slug')->nullable();
             $table->string('blog_file')->nullable();
-            $table->string('blog_creator')->nullable();
+            $table->string('blog_creator_id')->nullable();
             $table->integer('blog_must')->nullable();
             $table->text('blog_content')->nullable();
             $table->enum('blog_status',['0','1'])->default(1);
