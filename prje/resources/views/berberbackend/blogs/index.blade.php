@@ -4,10 +4,10 @@
 
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">blog</h3>
+                <h3 class="box-title">Bloglarınız</h3>
 
                 <div align="right">
-                    <a href="{{route('bblog.create')}}"><button class="btn btn-success">Ekle</button></a>
+                    <a href="{{route('bblog.create')}}"><button class="btn btn-success">EKLE</button></a>
                 </div>
             </div>
             <div class="box-body">

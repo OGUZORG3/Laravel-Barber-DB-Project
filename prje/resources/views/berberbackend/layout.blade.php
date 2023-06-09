@@ -134,7 +134,7 @@ desired effect
                                 <img src="../../images/users/{{Auth::user()->user_file}}" class="img-circle" alt="User Image">
                                 @endif
                                 <p>
-                                    {{Auth::user()->name}} - Web Developer
+                                    {{Auth::user()->name}} -Yönetici
                                     <small>{{Auth::user()->email_verified_at}} Tarihinden beri kayıtlı.</small>
                                 </p>
                             </li>
@@ -145,10 +145,10 @@ desired effect
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a  class="btn btn-default btn-flat">Profile</a>
+                                    <a  href="{{route('berber.edit',Auth::user()->id)}}" class="btn btn-default btn-flat">Profili Düzenle</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('berber.logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="{{route('berber.logout')}}" class="btn btn-default btn-flat">Çıkış Yap</a>
                                 </div>
                             </li>
                         </ul>
@@ -184,10 +184,10 @@ desired effect
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menüler</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="{{route('berber.index')}}"><i class="fa fa-link"></i> <span>anasayfa</span></a></li>
+                <li class="active"><a href="{{route('berber.index')}}"><i class="fa fa-home"></i> <span>Anasayfa</span></a></li>
                 
                 <li><a href="{{route('berber.settings')}}"><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
-                <li><a href="{{route('bblog.index')}}"><i class="fa fa-link"></i> <span>Bloglar</span></a></li>
+                <li><a href="{{route('bblog.index')}}"><i class="fa fa-paper-plane"></i> <span>Bloglar</span></a></li>
              
             </ul>
             <!-- /.sidebar-menu -->
