@@ -15,9 +15,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
+                        @if($blog->blog_file != null)
                         <a href="#">
-                            <img class="img-fluid rounded" src="/images/blogs/{{$blog->blog_file}}" alt="">
+                            <img class="img-fluid rounded img-sm" style="object-fit: cover!important;" src="../images/blogs/{{$blog->blog_file}}" alt="">
                         </a>
+                        @else
+                            <img src="../public/sistem-resimleri/not-found.png" class="card-img-top" alt="...">
+                        @endif
                     </div>
                     <div class="col-lg-6">
                         <h2 class="card-title">{{$blog->blog_title}}</h2>

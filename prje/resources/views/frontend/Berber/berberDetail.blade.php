@@ -59,17 +59,23 @@
                             @if(isset($blogs['blogs']) && count($blogs['blogs']) > 0)
                                 <div class="row g-2">
                                     @foreach($blogs['blogs'] as $blog)
-                                        <div class="col-4 bg-transparent p-3" style="position: relative;">
-                                            <div class="card h-100 shadow-sm">
+                                        <div class="col-md-4 col-sm-6 bg-transparent p-3" style="position: relative;">
+                                            <div class="card h-100 shadow-sm ">
+                                                @if($blog->blog_file != null)
                                                 <img src="../../../images/blogs/{{$blog->blog_file}}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="clearfix mb-3">
-                                                        <span class="float-start badge rounded-pill bg-primary">{{$blog->blog_slug}}</span>
-                                                    </div>
-                                                    <h5 class="card-title">{{$blog->blog_title}}</h5>
-                                                    <div class="text-center my-4">
-                                                        <a href="{{route('blog.Detail',$blog->blog_slug)}}" class="btn btn-warning">Bloga git</a>
-                                                    </div>
+                                                @else
+                                                <img src="../../../public/sistem-resimleri/not-found.png" class="card-img-top" alt="...">
+                                                @endif
+                                                        <div class="card-body">
+                                                        <div class="clearfix mb-3 "  >
+                                                            <span class="float-start badge rounded-pill bg-primary">{{$blog->blog_slug}}</span>
+                                                        </div>
+                                                            <div class="position-relative ">
+                                                        <h5 class="card-title">{{$blog->blog_title}}</h5>
+                                                            </div>
+                                                        <div class="text-center my-4">
+                                                            <a href="{{route('blog.Detail',$blog->blog_slug)}}"  class="btn btn-warning">Bloga git</a>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -8,7 +8,7 @@
     <meta name="description" content="{{$description}}">
     <meta name="author" content="">
 
-    <title>@yield('title')</title>
+    <title>E-berberim</title>
 
     <!-- Bootstrap core CSS -->
     <link href="\berber\prje\public\frontend\css\stil.css" rel="stylesheet">

@@ -92,11 +92,6 @@
         </form>
 
 
-        <div class="col-xs-4">
-            <a type="submit" href="{{route('berber.kayit')}}" class="btn btn-primary btn-block btn-flat">Kayıt ol</a>
-        </div>
-
-
     </div>
     <!-- /.login-box-body -->
 </div>

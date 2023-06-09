@@ -26,7 +26,7 @@ class DefaultController extends Controller
    public function logout()
    {
 
-    return redirect(route('berber.Login'))->with('success','Güvenli Çıkış Yapıldı');
+    return redirect(route('berber.login'))->with('success','Güvenli Çıkış Yapıldı');
    }
     public function authenticate(Request $request)
     {
