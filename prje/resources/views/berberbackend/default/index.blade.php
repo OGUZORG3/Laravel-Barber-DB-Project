@@ -1,5 +1,4 @@
 @extends('berberbackend.layout')
-
 @section('content')
 
     
@@ -15,8 +14,6 @@
     </div>
 </section>
     
-    
 @endsection
-
-@section('css') @endsection
-@section('js') @endsection
+@section('css')@endsection
+@section('js')@endsection
