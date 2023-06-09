@@ -18,10 +18,15 @@ class DefaultController extends Controller
 
     }
 
+
+
+
    public function login()
    {
     return view('berberbackend.default.login');
    }
+   
+
 
    public function logout()
    {
@@ -44,7 +49,15 @@ class DefaultController extends Controller
     public function kayit(){
         return view('BerberBackend.default.kayit');
     }
+<<<<<<< HEAD
+
+ 
+
+
+   public function store(Request $request)
+=======
     public function store(Request $request)
+>>>>>>> a6e2e3ba33d057ce05c811a9133e324532539161
     {
 
 
@@ -93,5 +106,6 @@ class DefaultController extends Controller
         }
         return back()->with('error', 'İşlem Başarısız');
     }
+   
 
 }

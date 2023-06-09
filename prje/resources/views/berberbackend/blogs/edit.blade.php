@@ -18,7 +18,7 @@
                         <label>Yüklü Görsel</label>
                         <div class="row">
                             <div class="col-xs-12">
-                                <img width="100" src="../images/blogs/{{$blogs->blog_file}}" alt="" >
+                                <img width="100" src="../../../../images/blogs/{{$blogs->blog_file}}" alt="" >
                             </div>
                         </div>
                     </div>
