@@ -15,10 +15,10 @@ class BerberController extends Controller
         $veri['berber']=User::where('role','berber')->orderBy('id')->paginate(6);
         return view('frontend.Berber.berber')->with(compact('veri'));
     }
-    public function detail(string $id)
+    public function detail($id)
     {
         $prof['prof']=berber_detay::find(intval($id));
-        $blogs['blogs']=berber_blog::find(intval($id));
+        $blogs['blogs']=berber_blog::where('blog_creator_id',$id)->orderBy('id')->paginate(6);
         return view('frontend.Berber.berberDetail')->with(compact('prof','blogs'));
     }
 }

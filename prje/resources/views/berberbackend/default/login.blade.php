@@ -44,6 +44,7 @@
 
 </head>
 <body class="hold-transition login-page">
+<a href="{{route('home.Index')}}"><img src="frontend/css/return.png"  style="width: 30px;height: 30px;margin: 10px;"></a>
 <div class="login-box">
     <div class="login-logo">
         <a style="color:white; " href="{{route('berber.login')}}"><b>E-</b> Berberim</a>
@@ -86,17 +87,24 @@
                 <!-- /.col -->
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Giriş Yap</button>
+                    <a type="submit" href="{{route('berber.kayit')}}"
+                       class="btn btn-primary btn-block btn-flat">Kayıt ol</a>
                 </div>
+
+
+
                 <!-- /.col -->
             </div>
         </form>
 
 
-                <div class="col-xs-4">
 
+<<<<<<< HEAD
                     <a type="submit" href="{{route('berber.kayit')}}"
                      class="btn btn-primary btn-block btn-flat" >Kayıt ol</a>
                 </div>
+=======
+>>>>>>> a6e2e3ba33d057ce05c811a9133e324532539161
 
 
     </div>

@@ -11,25 +11,24 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-lg-7">
 
                 <!-- Preview Image -->
-                <img class="img-fluid rounded" src="/images/blogs/{{$blog->blog_file}}" alt="">
-
+                @if(!empty($blog->blog_file))
+                <img class="img-fluid rounded" src="../../images/blogs/{{$blog->blog_file}}" alt="">
                 <hr>
-
+                @endif
                 <!-- Date/Time -->
-                <p> Yayınlama Zamanı {{$blog->created_at->format('d-m-Y h:i')}}</p>
 
-                <hr>
+
 
                 <p>{!! $blog->blog_content !!}</p>
                 <hr>
-
+                <p> Yayınlama Zamanı {{$blog->created_at->format('d-m-Y h:i')}}</p>
             </div>
 
             <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <div class="col-md-5">
 
 
                 <!-- Side Widget -->
@@ -37,11 +36,13 @@
                     <h5 class="card-header">Son Bloglar</h5>
                     <div class="card-body">
                         <ul class="list-group">
-                            @foreach($blogList as $list)
+                            @foreach($blogList['list'] as $list)
                                 <a href="{{route('blog.Detail',$list->blog_slug)}}"> <li  class="list-group-item ">{{$list->blog_title}}</li></a>
                             @endforeach
                         </ul>
-
+                    </div>
+                    <div class="sayfa ml-3" >
+                        {{$blogList['list']->links()}}
                     </div>
                 </div>
 

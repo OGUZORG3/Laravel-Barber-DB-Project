@@ -45,7 +45,7 @@
                 <div class="col-lg-4 col-sm-6 portfolio-item Ablog">
                     <div class="card h-100">
 
-                        <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
+                        <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top eimg" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="{{route('blog.Detail',$blog->blog_slug)}}">{{$blog->blog_title}}</a>
@@ -74,9 +74,8 @@
 
         <hr>
 
-
+        @if(isset($paket['packages']) && count($paket['packages']) > 0)
         <h1>Paketlerimiz</h1>
-
         <section class="justify-content-center align-self-center d-flex">
             <div class="row">
                 @foreach($paket['packages'] as $paket)
@@ -106,10 +105,11 @@
             </div>
 
         </section>
-
+        @endif
         <section>
 
         </section>
+        @if(isset($data['ekip']) && count($data['ekip']) > 0)
         <section>
             <h1>Ekibimiz</h1>
             <div class="card-group ">
@@ -129,13 +129,14 @@
                 @endforeach
             </div>
         </section>
+        @endif
         <!-- Call to Action Section -->
         <div class="row m-4">
             <div class="col-md-8">
 
             </div>
             <div class="col-md-4">
-                <a class="btn btn-lg btn-secondary btn-block" href="#">Bize Ulaşın</a>
+                <a class="btn btn-lg btn-secondary btn-block" href="{{route('contact.Detail')}}">Bize Ulaşın</a>
             </div>
         </div>
 

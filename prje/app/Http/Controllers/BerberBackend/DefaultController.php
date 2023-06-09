@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\BerberBackend;
 
 use App\Http\Controllers\Controller;
+use App\Models\berber_detay;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -31,7 +31,7 @@ class DefaultController extends Controller
    public function logout()
    {
 
-    return redirect(route('admin.Login'))->with('success','Güvenli Çıkış Yapıldı');
+    return redirect(route('berber.Login'))->with('success','Güvenli Çıkış Yapıldı');
    }
     public function authenticate(Request $request)
     {
@@ -49,18 +49,17 @@ class DefaultController extends Controller
     public function kayit(){
         return view('BerberBackend.default.kayit');
     }
+<<<<<<< HEAD
 
  
 
 
    public function store(Request $request)
+=======
+    public function store(Request $request)
+>>>>>>> a6e2e3ba33d057ce05c811a9133e324532539161
     {
 
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|Min:6'
-        ]);
 
 
         if ($request->hasFile('user_file')) {
@@ -74,18 +73,31 @@ class DefaultController extends Controller
             $file_name = uniqid() . '.' . $request->user_file->getClientOriginalExtension();
             $request->user_file->move(public_path('../images/users'), $file_name);
         } else {
+
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|Min:6'
+            ]);
             $file_name = null;
         }
 
-
+        $user2 = berber_detay::insert(
+            [
+                "created_at" => now(),
+                "berber_isim" => $request->name,
+                "berber_soyisim" => $request->surname,
+                "berber_file" => $file_name,
+            ]
+        );
         $user = User::insert(
             [
                 "role" => 'berber',
                 "name" => $request->name,
+                "surname" => $request->surname,
                 "email" => $request->email,
                 "user_file" => $file_name,
                 "password" => Hash::make($request->password),
-                "user_status" => $request->user_status,
             ]
         );
 
