@@ -99,12 +99,7 @@
 
 
 
-<<<<<<< HEAD
-                    <a type="submit" href="{{route('berber.kayit')}}"
-                     class="btn btn-primary btn-block btn-flat" >Kayıt ol</a>
-                </div>
-=======
->>>>>>> a6e2e3ba33d057ce05c811a9133e324532539161
+
 
 
     </div>

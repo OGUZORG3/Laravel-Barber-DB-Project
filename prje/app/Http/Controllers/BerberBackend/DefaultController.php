@@ -31,7 +31,7 @@ class DefaultController extends Controller
    public function logout()
    {
 
-    return redirect(route('berber.Login'))->with('success','Güvenli Çıkış Yapıldı');
+    return redirect(route('berber.login'))->with('success','Güvenli Çıkış Yapıldı');
    }
     public function authenticate(Request $request)
     {
@@ -49,15 +49,9 @@ class DefaultController extends Controller
     public function kayit(){
         return view('BerberBackend.default.kayit');
     }
-<<<<<<< HEAD
 
- 
-
-
-   public function store(Request $request)
-=======
     public function store(Request $request)
->>>>>>> a6e2e3ba33d057ce05c811a9133e324532539161
+
     {
 
 
