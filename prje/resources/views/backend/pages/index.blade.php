@@ -4,7 +4,7 @@
 
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">pages</h3>
+                <h3 class="box-title">Haberleriniz</h3>
 
                 <div align="right">
                     <a href="{{route('page.create')}}"><button class="btn btn-success">Ekle</button></a>
@@ -16,13 +16,14 @@
                     <thead>
                     <tr>
                         <th>Başlık</th>
-                        <th></th>
+                        <th>İçerik</th>
                         <th></th>
                     </tr>
                     <tbody id="sortable">
                     @foreach($data['page'] as $page)
                         <tr id="item-{{$page->id}}">
                             <td class="sortable">{{$page['page_title']}}</td>
+                            <td class="sortable">{{$page['page_content']}}</td>
                             <td width="5"><a href="{{route('page.edit',$page->id)}}"><i class="fa fa-pencil-square"></i></a></td>
                             <td width="5">
                                 <a href="javascript:void(0)"><i id="@php echo $page->id @endphp"

@@ -32,9 +32,7 @@ class DefaultController extends Controller
         return view('berberbackend.default.index')->with(compact('berber','blog','blogtik'));
 
     }
-
-
-
+   
 
    public function login()
    {

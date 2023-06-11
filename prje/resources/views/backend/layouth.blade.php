@@ -210,7 +210,7 @@ desired effect
                     <ul class="treeview-menu">
                         <li><a href="{{route('paket.index')}}">Paketler</a></li>
                         <li><a href="{{route('blog.index')}}">Bloglar</a></li>
-                        <li><a href="{{route('page.index')}}">Sayfalar</a></li>
+                        <li><a href="{{route('page.index')}}">Haberlar</a></li>
                         <li><a href="{{route('slider.index')}}">Slider</a></li>
                         <li><a href="{{route('ekip.index')}}">Ekip</a></li>
                     </ul>

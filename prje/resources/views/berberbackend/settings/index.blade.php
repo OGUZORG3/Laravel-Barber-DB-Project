@@ -1,8 +1,5 @@
 @extends('berberbackend.layout')
-
 @section('content')
-
-    
 <section class="content-header">
      
     <div class="box box-primary">
@@ -13,28 +10,81 @@
 
           <div class="box-body">
             <table class="table table-stripped">
-<thead>
-    <tr>
-        <th>açıklama</th>
-        <th>içerik</th>
-        <th>anahtar değer</th>
-        <th></th>
+            <thead>
+                    <tr>
+                        <th>Görsel</th>
+                        <th>Ad Soyad</th>
+                        <th>E-mail</th>
+                        
+                    </tr>
+                    <tbody id="sortable">
+                  
+                    @php
+    $user = Auth::user();
+@endphp
+
+<tr id="item-{{$user->id}}">
+    <td class="sortable" width="150"><img width="150" src="../../images/users/{{$user->user_file}}" alt=""></td>
+    <td>{{$user->name}}</td>
+    <td>{{$user->email}}</td>
+    
+    <td width="5"><a href="{{route('berber.edit',Auth::user()->id)}}"><i class="fa fa-pencil-square"></i></a></td>
+    <td width="5">
+        <a href="javascript:void(0)"><i id="{{Auth::user()->id}}" class="fa fa-trash-o"></i></a>
+    </td>
 </tr>
-<tbody>
-<tr>
-        <td>açıklama</td>
-        <td>içerik</td>
-        <td>anahtar değer</td>
-        <td>buton</td>
-</tr>
-</tbody>
-</thead>
+
+                    </tbody>
+                    </thead>
 </table>
                 
          </div>
     </div>
 </section>
-    
+<script type="text/javascript">
+        $(function () {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+           
+          
+
+        });
+
+        $(".fa-trash-o").click(function () {
+            destroy_id = $(this).attr('id');
+
+            alertify.confirm('Üyeliğinizi silmek istediğinize emin misiniz?', 'Bu işlem geri alınamaz',
+                function () {
+
+                    $.ajax({
+                        type:"GET",
+                        url:"settings/"+destroy_id,
+                        success: function (msg) {
+                            if (msg)
+                            {
+                                $("#item-"+destroy_id).remove();
+                                alertify.success("Silme İşlemi Başarılı");
+                                window.location.href = "{{route('berber.login')}}";
+
+                            } else {
+                                alertify.error("İşlem Tamamlanamadı");
+                            }
+                        }
+                    });
+
+                },
+                function () {
+                    alertify.error('Silme işlemi iptal edildi')
+                }
+            )
+
+        });
+    </script> 
     
 @endsection
 

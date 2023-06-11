@@ -34,7 +34,7 @@
 
                 <!-- Side Widget -->
                 <div class="card my-4">
-                    <h5 class="card-header">Son Pagelar</h5>
+                    <h5 class="card-header">Son Haberler</h5>
                     <div class="card-body">
                         <ul class="list-group">
                             @foreach($pageList as $list)

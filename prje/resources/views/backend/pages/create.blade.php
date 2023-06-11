@@ -4,7 +4,7 @@
 
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">page Ekleme</h3>
+                <h3 class="box-title">Haber Ekleyin</h3>
                 <div align="right">
                     <a href="{{route('page.index')}}"><button class="btn btn-danger">Geri</button></a>
                 </div>

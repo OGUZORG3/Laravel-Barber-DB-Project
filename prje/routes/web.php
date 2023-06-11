@@ -56,6 +56,7 @@ Route::get('/logout','\App\Http\Controllers\BerberBackend\DefaultController@logo
 Route::get('/','\App\Http\Controllers\BerberBackend\DefaultController@login')->name('berber.login');
 Route::get('/kayit', '\App\Http\Controllers\BerberBackend\DefaultController@kayit')->name('berber.kayit');
 Route::post('/store','\App\Http\Controllers\BerberBackend\DefaultController@store')->name('berber.store');
+Route::get('/settings/{id}', '\App\Http\Controllers\BerberBackend\BuserController@destroy')->name('berber.delete');
 Route::resource('bblog','\App\Http\Controllers\BerberBackend\BblogController');
 
 });
