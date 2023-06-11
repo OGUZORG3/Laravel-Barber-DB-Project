@@ -170,12 +170,16 @@ class BuserController extends Controller
      */
     public function destroy($id)
     {
-        
+        $user = User::find(intval($id));
+       
+        if ($user->delete()) {
+           
+            return redirect(route('berber.login'))->with('success', 'İşlem Başarılı');
+        }
+        return back()->with('error', 'İşlem Başarısız');
+       
     }
 
-    public function sortable()
-    {
 
-    }
-
+   
 }

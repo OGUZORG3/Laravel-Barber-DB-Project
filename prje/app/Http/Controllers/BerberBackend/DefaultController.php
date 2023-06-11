@@ -17,9 +17,7 @@ class DefaultController extends Controller
         return view('berberbackend.default.index');
 
     }
-
-
-
+   
 
    public function login()
    {
