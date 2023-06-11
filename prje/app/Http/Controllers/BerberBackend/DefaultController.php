@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\BerberBackend;
 
 use App\Http\Controllers\Controller;
+use App\Models\berber_blog;
 use App\Models\berber_detay;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +17,19 @@ class DefaultController extends Controller
 {
     public function index()
     {
-        return view('berberbackend.default.index');
+        $berber=berber_detay::where('user_id',Auth::user()->id)->pluck('berber_prof_tiklanma');
+        $blogs = berber_detay::where('user_id', Auth::user()->id)
+            ->select('id')
+            ->first();
+        if ($blogs) {
+            $id = $blogs->id;
+            // İşlemleri burada devam ettirin
+        }
+
+        $blog=berber_blog::where('blog_creator_id',$id)->count();
+
+        $blogtik=berber_blog::where('blog_creator_id',$id)->sum('tiklanma_sayisi');
+        return view('berberbackend.default.index')->with(compact('berber','blog','blogtik'));
 
     }
 
@@ -25,7 +40,7 @@ class DefaultController extends Controller
    {
     return view('berberbackend.default.login');
    }
-   
+
 
 
    public function logout()
@@ -75,9 +90,14 @@ class DefaultController extends Controller
             ]);
             $file_name = null;
         }
+        $randomString = uniqid(); // 8 karakter uzunluğunda rastgele bir dize oluşturur
+
+        $randomString = substr(uniqid(), 0, 5);
+        $numericOnly = preg_replace("/[^0-9]/", "", $randomString);
 
         $user2 = berber_detay::insert(
             [
+                'user_id' => $numericOnly,
                 "created_at" => now(),
                 "berber_isim" => $request->name,
                 "berber_soyisim" => $request->surname,
@@ -86,6 +106,7 @@ class DefaultController extends Controller
         );
         $user = User::insert(
             [
+                "id" => $numericOnly,
                 "role" => 'berber',
                 "name" => $request->name,
                 "surname" => $request->surname,
@@ -100,6 +121,6 @@ class DefaultController extends Controller
         }
         return back()->with('error', 'İşlem Başarısız');
     }
-   
+
 
 }

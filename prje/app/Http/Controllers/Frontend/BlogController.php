@@ -15,10 +15,19 @@ class BlogController extends Controller
        return view('frontend.blog.index',compact('data'));
    }
 
-   public function detail($slug)
+   public function detail($id)
    {
-       $blogList['list']=berber_blog::orderBy('blog_must','DESC')->paginate(9);
-       $blog=berber_blog::where('blog_slug',$slug)->first();
+       $tıklanma=berber_blog::where('id',$id)->pluck('tiklanma_sayisi');
+       if ($tıklanma)
+       {
+            $tıklanma = $tıklanma->sum() +1;
+            berber_blog::where('id',$id)->update(
+                ["tiklanma_sayisi" => $tıklanma]
+            );
+
+       }
+       $blogList['list']=berber_blog::orderBy('id')->paginate(9);
+       $blog=berber_blog::where('id',$id)->first();
        return view('frontend.blog.detail',compact('blog','blogList'));
    }
 }

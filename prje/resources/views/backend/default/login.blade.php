@@ -92,12 +92,6 @@
         </form>
 
 
-<<<<<<< HEAD
-=======
-        
-
-
->>>>>>> c435864130d6d9133e5bf50d78e0857dabddafb7
     </div>
     <!-- /.login-box-body -->
 </div>

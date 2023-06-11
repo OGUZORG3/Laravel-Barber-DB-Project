@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\berber_detay;
 
 class BblogController extends Controller
 {
@@ -56,7 +56,12 @@ class BblogController extends Controller
               $file_name=null;
           }
 
-
+        $blogs = berber_detay::where('user_id', Auth::user()->id)
+            ->select('id')
+            ->first();
+        if ($blogs) {
+            $id = $blogs->id;
+        }
 
 
 
@@ -64,7 +69,7 @@ class BblogController extends Controller
           [
               "created_at" => now(),
               "updated_at" => now(),
-              "blog_creator_id" => Auth::user()->id,
+              "blog_creator_id" => $id,
               "blog_title" => $request->blog_title,
               "blog_slug" => $slug, //işlem
               "blog_file" => $file_name,//İşlem

@@ -74,7 +74,7 @@
                                                         <h5 class="card-title">{{$blog->blog_title}}</h5>
                                                             </div>
                                                         <div class="text-center my-4">
-                                                            <a href="{{route('blog.Detail',$blog->blog_slug)}}"  class="btn btn-warning">Bloga git</a>
+                                                            <a href="{{route('blog.Detail',$blog->id)}}"  class="btn btn-warning">Bloga git</a>
                                                         </div>
                                                 </div>
                                             </div>

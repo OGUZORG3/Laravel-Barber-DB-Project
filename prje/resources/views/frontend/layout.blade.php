@@ -45,6 +45,9 @@
                     <a class="nav-link" href="{{route('berberler.index')}}">Berberlerimiz</a>
                 </li>
                 <li class="nav-item hover-Devredısı">
+                    <a class="nav-link" href="{{route('Frontpaket.index')}}">Paketlerimiz</a>
+                </li>
+                <li class="nav-item hover-Devredısı">
                     <a class="nav-link" href="{{route('contact.Detail')}}">Bize Ulaşın</a>
                 </li>
                 <li class="cusdüg1">

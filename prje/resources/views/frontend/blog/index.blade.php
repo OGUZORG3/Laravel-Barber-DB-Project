@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         @if($blog->blog_file != null)
-                        <a href="#">
+                        <a href="{{route('blog.Detail',$blog->id)}}">
                             <img class="img-fluid rounded img-sm" style="object-fit: cover!important;" src="../images/blogs/{{$blog->blog_file}}" alt="">
                         </a>
                         @else
@@ -26,12 +26,13 @@
                     <div class="col-lg-6">
                         <h2 class="card-title">{{$blog->blog_title}}</h2>
                         <p class="card-text">{!! substr($blog->blog_content,0,140) !!}</p>
-                        <a href="{{route('blog.Detail',$blog->blog_slug)}}" class="btn btn-primary">Devamını Oku &rarr;</a>
+                        <a href="{{route('blog.Detail',$blog->id)}}" class="btn btn-primary">Devamını Oku &rarr;</a>
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-muted">
-               Yayınlama Zamanı {{$blog->created_at->format('d-m-Y h:i')}}
+            <div class="card-footer text-muted row bg-transparent">
+               <p class="col-6">Yayınlama Zamanı {{$blog->created_at->format('d-m-Y h:i')}}</p>
+                <p class="col-6 text-right">Görüntülenme Sayısı: {{$blog->tiklanma_sayisi}}</p>
             </div>
         </div>
             @endforeach

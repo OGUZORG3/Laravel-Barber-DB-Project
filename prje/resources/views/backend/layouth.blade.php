@@ -146,18 +146,15 @@ desired effect
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{route('user.edit',Auth::user()->id)}}" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="{{route('user.edit',Auth::user()->id)}}" class="btn btn-default btn-flat">Profil</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{route('admin.Logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="{{route('admin.Logout')}}" class="btn btn-default btn-flat">Cıkış Yap</a>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
                 </ul>
             </div>
         </nav>

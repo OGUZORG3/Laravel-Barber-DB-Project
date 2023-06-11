@@ -17,8 +17,23 @@ class BerberController extends Controller
     }
     public function detail($id)
     {
-        $prof['prof']=berber_detay::find(intval($id));
-        $blogs['blogs']=berber_blog::where('blog_creator_id',$id)->orderBy('id')->paginate(6);
+        $tıklanma=berber_detay::where('user_id',$id)->pluck('berber_prof_tiklanma');
+        if ($tıklanma)
+        {
+            $tıklanma = $tıklanma->sum() +1;
+            berber_detay::where('user_id',$id)->update(
+                ["berber_prof_tiklanma" => $tıklanma]
+            );
+
+        }
+        $blogs = berber_detay::where('user_id', $id)
+            ->select('id')
+            ->first();
+        if ($blogs) {
+            $idi = $blogs->id;
+        }
+        $prof['prof']=berber_detay::find(intval($idi));
+        $blogs['blogs']=berber_blog::where('blog_creator_id',$idi)->orderBy('id')->paginate(6);
         return view('frontend.Berber.berberDetail')->with(compact('prof','blogs'));
     }
 }

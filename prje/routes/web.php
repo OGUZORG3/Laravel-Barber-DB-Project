@@ -40,6 +40,8 @@ Route::namespace('Frontend')->group(function () {
     //Berberler
     Route::get('/berberler','\App\Http\Controllers\Frontend\BerberController@index')->name('berberler.index');
     Route::get('/berberler/detail/{id}','\App\Http\Controllers\Frontend\BerberController@detail')->name('berberler.detail');
+    //paket
+    Route::get('/paket','\App\Http\Controllers\Frontend\PaketController@index')->name('Frontpaket.index');
 
 });
 //Berber admin

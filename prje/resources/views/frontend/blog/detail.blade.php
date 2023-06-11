@@ -25,6 +25,7 @@
                 <p>{!! $blog->blog_content !!}</p>
                 <hr>
                 <p> Yayınlama Zamanı {{$blog->created_at->format('d-m-Y h:i')}}</p>
+                <p >Görüntülenme Sayısı: {{$blog->tiklanma_sayisi}}</p>
             </div>
 
             <!-- Sidebar Widgets Column -->
