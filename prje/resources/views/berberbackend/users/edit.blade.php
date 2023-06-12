@@ -59,6 +59,34 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Adres</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="adres" >
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label>Dükkan İsmi</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="dukkan"   >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="telefon"  >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label>Şifre</label>
                         <div class="row">
                             <div class="col-xs-12">

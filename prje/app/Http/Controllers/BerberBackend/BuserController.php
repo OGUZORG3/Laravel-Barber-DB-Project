@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\BerberBackend\berber_detays;
 
 class BuserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -60,11 +62,13 @@ class BuserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    { 
+      
         $users = User::where('id', $id)->first();
+    $berber_detays = $users->berber_detays;
         return view('berberbackend.users.edit')->with('users', $users);
     }
-
+  
     /**
      * Update the specified resource in storage.
      *
@@ -79,6 +83,11 @@ class BuserController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'email' => 'required|email',
+            'adres' => 'required',
+            'dukkan' => 'required',
+            'telefon' => 'required',
+
+
         ]);
 
 
@@ -105,8 +114,17 @@ class BuserController extends Controller
                         "user_file" => $file_name,//İşlem
                         "password" => Hash::make($request->password),
                         "user_status" => $request->user_status,
+            
                     ]
+               
                 );
+                $berber_detays =berber_detays::Where('id',$id)->update(
+                    [
+                        "adres" => $request->berber_adres,
+                        "dukkan" => $request->berber_dukkan_isim,
+                        "telefon" => $request->berber_Telefon,
+                    ]
+                    );
             } else {
                 $user = User::Where('id', $id)->update(
                     [
@@ -114,8 +132,17 @@ class BuserController extends Controller
                         "email" => $request->email,
                         "user_file" => $file_name,//İşlem
                         "user_status" => $request->user_status,
+                      
+                        
                     ]
                 );
+                $berber_detays =berber_detays::Where('id',$id)->update(
+                    [
+                        "adres" => $request->berber_adres,
+                        "dukkan" => $request->berber_dukkan_isim,
+                        "telefon" => $request->berber_Telefon,
+                    ]
+                    );
             }
 
 
@@ -138,8 +165,17 @@ class BuserController extends Controller
                         "email" => $request->email,
                         "password" => Hash::make($request->password),
                         "user_status" => $request->user_status,
+                      
+                        
                     ]
                 );
+                $berber_detays =berber_detays::Where('id',$id)->update(
+                    [
+                        "adres" => $request->berber_adres,
+                        "dukkan" => $request->berber_dukkan_isim,
+                        "telefon" => $request->berber_Telefon,
+                    ]
+                    );
 
             } else {
 
@@ -148,8 +184,17 @@ class BuserController extends Controller
                         "name" => $request->name,
                         "email" => $request->email,
                         "user_status" => $request->user_status,
+                      
+                        
                     ]
                 );
+                $berber_detays =berber_detays::Where('id',$id)->update(
+                    [
+                        "adres" => $request->berber_adres,
+                        "dukkan" => $request->berber_dukkan_isim,
+                        "telefon" => $request->berber_Telefon,
+                    ]
+                    );
 
             }
 
@@ -163,6 +208,7 @@ class BuserController extends Controller
         return back()->with('error', 'İşlem Başarısız');
     }
 
+    
 
     /**
      * Remove the specified resource from storage.

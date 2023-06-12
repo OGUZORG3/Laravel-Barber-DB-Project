@@ -28,9 +28,10 @@
     <td>{{$user->name}}</td>
     <td>{{$user->email}}</td>
     
-    <td width="5"><a href="{{route('berber.edit',Auth::user()->id)}}"><i class="fa fa-pencil-square"></i></a></td>
+    <td width="5"><a href="{{route('berber.edit',Auth::user()->id)}}"><i class="fa fa-pencil-square">Profilimi Düzenle</i></a></td>
+    <td width="5"><a href="{{route('berber.edit',Auth::user()->id)}}"><i class="fa fa-pencil-square">Berber Profilimi Düzenle</i></a></td>
     <td width="5">
-        <a href="javascript:void(0)"><i id="{{Auth::user()->id}}" class="fa fa-trash-o"></i></a>
+        <a href="javascript:void(0)"><i id="{{Auth::user()->id}}" class="fa fa-trash-o">Üyeliğimi Sil</i></a>
     </td>
 </tr>
 

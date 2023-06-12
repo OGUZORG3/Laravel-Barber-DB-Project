@@ -51,7 +51,9 @@ Route::get('/settings','\App\Http\Controllers\BerberBackend\SettingsController@i
 Route::get('/blog','\App\Http\Controllers\BerberBackend\BblogController@index')->name('berber.blog');
 Route::post('/login', '\App\Http\Controllers\BerberBackend\DefaultController@authenticate')->name('berber.Authenticate');
 Route::get('/edit/{id}', '\App\Http\Controllers\BerberBackend\BuserController@edit')->name('berber.edit');
+
 Route::put('/update/{id}', '\App\Http\Controllers\BerberBackend\BuserController@update')->name('berber.update');
+
 Route::get('/logout','\App\Http\Controllers\BerberBackend\DefaultController@logout')->name('berber.logout');
 Route::get('/','\App\Http\Controllers\BerberBackend\DefaultController@login')->name('berber.login');
 Route::get('/kayit', '\App\Http\Controllers\BerberBackend\DefaultController@kayit')->name('berber.kayit');
