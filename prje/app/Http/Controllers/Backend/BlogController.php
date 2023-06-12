@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
+use App\Models\berber_blog;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Blogs;
 
 class BlogController extends Controller
 {
@@ -13,8 +13,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $data['blog'] = Blogs::all()->sortBy('blog_must');
-        $data['blog'] = Blogs::orderBy('blog_must')->paginate(7);
+        $data['blog'] = berber_blog::all()->sortBy('id');
+        $data['blog'] = berber_blog::orderBy('id')->paginate(7);
         return view('backend.blogs.index',compact('data'));
     }
 
@@ -55,7 +55,7 @@ class BlogController extends Controller
 
 
 
-        $blog=Blogs::insert(
+        $blog=berber_blog::insert(
             [
                 "blog_title" => $request->blog_title,
                 "blog_slug" => $slug, //işlem
@@ -85,7 +85,7 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        $blogs=Blogs::where('id',$id)->first();
+        $blogs=berber_blog::where('id',$id)->first();
         return view('backend.blogs.edit')->with('blogs',$blogs);
     }
 
@@ -112,11 +112,11 @@ class BlogController extends Controller
             $file_name=uniqid().'.'.$request->blog_file->getClientOriginalExtension();
             $request->blog_file->move(public_path('../images/blogs'),$file_name);
 
-            $blog=Blogs::Where('id',$id)->update(
+            $blog=berber_blog::Where('id',$id)->update(
                 [
                     "blog_title" => $request->blog_title,
-                    "blog_slug" => $slug, //işlem
-                    "blog_file" => $file_name,//İşlem
+                    "blog_slug" => $slug,
+                    "blog_file" => $file_name,
                     "blog_content" => $request->blog_content,
                     "blog_status" => $request->blog_status,
                 ]
@@ -129,7 +129,7 @@ class BlogController extends Controller
             }
 
         } else {
-            $blog=Blogs::Where('id',$id)->update(
+            $blog=berber_blog::Where('id',$id)->update(
                 [
                     "blog_title" => $request->blog_title,
                     "blog_slug" => $slug,
@@ -155,7 +155,7 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        $blog=Blogs::find(intval($id));
+        $blog=berber_blog::find(intval($id));
         if ($blog->delete())
         {
             echo 1;
@@ -172,7 +172,7 @@ class BlogController extends Controller
 //        print_r($_POST['item']);
 
         foreach ($_POST['item'] as $key => $value) {
-            $blogs = Blogs::find(intval($value));
+            $blogs = berber_blog::find(intval($value));
             $blogs->blog_must = intval($key);
             $blogs->save();
         }

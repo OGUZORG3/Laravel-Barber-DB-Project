@@ -20,7 +20,7 @@
                         <label>Yüklü Görsel</label>
                         <div class="row">
                             <div class="col-xs-12">
-                                <img width="100" src="../images/pages/{{$pages->page_file}}" alt="" >
+                                <img width="100" src="../../../../images/pages/{{$pages->page_file}}" alt="" >
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                     <textarea class="form-control" id="editor1"
-                                              name="page_content">{{$pages->page_title}}</textarea>
+                                              name="page_content">{{$pages->page_content}}</textarea>
                                 <script>
                                     CKEDITOR.replace('editor1');
                                 </script>

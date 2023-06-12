@@ -137,6 +137,16 @@ body{
     transform: translate(-50%,-50%);
 
 }
+.Aimg{
+    width: 500px;
+    height: 500px;
+    object-fit: fill;
+    margin-top:50%;
+    margin-left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+
+}
 .ekip{
     border-radius: 25px;
 }

@@ -28,7 +28,7 @@ class BuserController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -77,6 +77,7 @@ class BuserController extends Controller
 
         $request->validate([
             'name' => 'required',
+            'surname' => 'required',
             'email' => 'required|email',
         ]);
 
@@ -99,6 +100,7 @@ class BuserController extends Controller
                 $user = User::Where('id', $id)->update(
                     [
                         "name" => $request->name,
+                        "surname" => $request->surname,
                         "email" => $request->email,
                         "user_file" => $file_name,//İşlem
                         "password" => Hash::make($request->password),
@@ -155,7 +157,7 @@ class BuserController extends Controller
         }
 
         if ($user) {
-            
+
             return redirect(route('berber.index'))->with('success','İşlem Başarılı');
         }
         return back()->with('error', 'İşlem Başarısız');
@@ -171,15 +173,15 @@ class BuserController extends Controller
     public function destroy($id)
     {
         $user = User::find(intval($id));
-       
+
         if ($user->delete()) {
-           
+
             return redirect(route('berber.login'))->with('success', 'İşlem Başarılı');
         }
         return back()->with('error', 'İşlem Başarısız');
-       
+
     }
 
 
-   
+
 }

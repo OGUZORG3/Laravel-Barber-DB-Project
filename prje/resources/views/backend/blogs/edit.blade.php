@@ -7,7 +7,7 @@
                 <h3 class="box-title">Blog Düzenleme</h3>
             </div>
             <div align="right">
-                <a href="{{route('page.index')}}"><button class="btn btn-danger">Geri</button></a>
+                <a href="{{route('blog.index')}}"><button class="btn btn-danger">Geri</button></a>
             </div>
             <div class="box-body">
                 <form action="{{route('blog.update',$blogs->id)}}" method="post"
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                     <textarea class="form-control" id="editor1"
-                                              name="blog_content">{{$blogs->blog_title}}</textarea>
+                                              name="blog_content">{{$blogs->blog_content}}</textarea>
                                 <script>
                                     CKEDITOR.replace('editor1');
                                 </script>

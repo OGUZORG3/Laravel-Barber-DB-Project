@@ -17,7 +17,7 @@
                         <label>Yüklü Görsel</label>
                         <div class="row">
                             <div class="col-xs-12">
-                                <img width="100" src="/images/users/{{$users->user_file}}" alt="">
+                                <img width="100" src="../../../../images/users/{{$users->user_file}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -34,10 +34,18 @@
 
 
                     <div class="form-group">
-                        <label>Ad Soyad</label>
+                        <label>Ad</label>
                         <div class="row">
                             <div class="col-xs-12">
                                 <input class="form-control" type="text" name="name" value="{{$users->name}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Soyad</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="surname" value="{{$users->surname}}">
                             </div>
                         </div>
                     </div>

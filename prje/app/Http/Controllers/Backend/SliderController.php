@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $data['slider'] = Sliders::orderBy('slider_must')->paginate(2);
+        $data['slider'] = Sliders::orderBy('slider_must')->paginate(3);
         return view('backend.sliders.index',compact('data'));
     }
 
@@ -41,7 +41,7 @@ class SliderController extends Controller
         $request->validate([
             'slider_title' => 'required',
             'slider_content' => 'required',
-            'slider_url' => 'active_url'
+            'slider_file' =>'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
         if (strlen($request->slider_slug)>3)

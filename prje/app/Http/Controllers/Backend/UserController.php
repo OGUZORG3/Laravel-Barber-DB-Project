@@ -62,6 +62,7 @@ class UserController extends Controller
         $user = User::insert(
             [
                 "name" => $request->name,
+                "surname" =>$request->surname,
                 "email" => $request->email,
                 "user_file" => $file_name,//İşlem
                 "password" => Hash::make($request->password),
@@ -110,6 +111,7 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required',
+            'surname' =>'required',
             'email' => 'required|email',
         ]);
 
@@ -132,8 +134,9 @@ class UserController extends Controller
                 $user = User::Where('id', $id)->update(
                     [
                         "name" => $request->name,
+                        "surname" => $request->surname,
                         "email" => $request->email,
-                        "user_file" => $file_name,//İşlem
+                        "user_file" => $file_name,
                         "password" => Hash::make($request->password),
                         "user_status" => $request->user_status,
                     ]
@@ -142,6 +145,7 @@ class UserController extends Controller
                 $user = User::Where('id', $id)->update(
                     [
                         "name" => $request->name,
+                        "surname" => $request->surname,
                         "email" => $request->email,
                         "user_file" => $file_name,//İşlem
                         "user_status" => $request->user_status,
@@ -166,6 +170,7 @@ class UserController extends Controller
                 $user = User::Where('id', $id)->update(
                     [
                         "name" => $request->name,
+                        "surname" => $request->surname,
                         "email" => $request->email,
                         "password" => Hash::make($request->password),
                         "user_status" => $request->user_status,
@@ -177,6 +182,7 @@ class UserController extends Controller
                 $user = User::Where('id', $id)->update(
                     [
                         "name" => $request->name,
+                        "surname" => $request->surname,
                         "email" => $request->email,
                         "user_status" => $request->user_status,
                     ]

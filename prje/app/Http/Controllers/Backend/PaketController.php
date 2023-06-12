@@ -100,9 +100,9 @@ class PaketController extends Controller
                 [
                     "paket_ad" => $request->paket_ad,
                     'paket_icerik' => $request->paket_icerik,
-                    'paket_file' => $file_name,
                     'paket_ozellik' => $request->paket_ozellik,
                     'paket_fiyat' => $request->paket_fiyat,
+                    'paket_file' => $file_name,
                 ]
             );
 

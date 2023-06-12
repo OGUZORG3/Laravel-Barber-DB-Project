@@ -34,7 +34,7 @@
     <!-- Page Content -->
 
     <div class="container cusContainer">
-
+        <hr>
 
         <!-- Portfolio Section -->
         <h2 class="mt-4">Bloglarımız</h2>
@@ -45,10 +45,10 @@
                 <div class="col-lg-4 col-sm-6 portfolio-item Ablog">
                     <div class="card h-100">
 
-                        <a href="{{route('blog.Detail',$blog->blog_slug)}}"><img class="card-img-top eimg" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
+                        <a href="{{route('blog.Detail',$blog->id)}}"><img class="card-img-top eimg" src="../images/blogs/{{$blog->blog_file}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="{{route('blog.Detail',$blog->blog_slug)}}">{{$blog->blog_title}}</a>
+                                <a href="{{route('blog.Detail',$blog->id)}}">{{$blog->blog_title}}</a>
                             </h4>
                             <p class="card-text">{!! substr($blog->blog_content,0,140) !!}</p>
                         </div>
@@ -58,57 +58,55 @@
 
 
         </div>
+        <hr>
         <!-- /.row -->
+        @if(isset($paket['packages']) && count($paket['packages']) > 0)
+            <h1>Paketlerimiz</h1>
+            <section class="justify-content-center align-self-center d-flex paket">
+                <div class="row ">
+                    @foreach($paket['packages'] as $paket)
+                        @if($loop->iteration <= 3)
+                            <div class="col-lg-4 col-md-6 ">
+                                <div class="kart mx-sm-auto" >
+                                    <div class="kart2 paketozel ">
+                                        <img src="../images/pack/{{$paket->paket_file}}"  class="card-img-top paketresim ">
+                                        <div class="card-body" style="background-color: rgb(0,0,0,0)!important;">
+                                            <h5 class="card-title">{{$paket->paket_ad}}</h5>
+                                            <p class="card-text">{{$paket->paket_icerik}}</p>
+                                        </div>
 
+                                        {!! $paket->paket_ozellik !!}
+
+                                        <div class="card-body">
+                                            <p class="mb-0">{{$paket->paket_fiyat}} Tl</p>
+                                            <a href="#" class="card-link mt-0">Satın Al</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <button class="btn btn-info m-5">Daha Fazla Paket Görmek İstersiniz</button>
+                        @endif
+                    @endforeach
+                </div>
+
+            </section>
+        @endif
         <!-- Features Section -->
+        <hr>
         <div class="row">
             <div class="col-lg-6">
                 <h2>{{$home_title}}</h2>
                 {!! $home_detail !!}
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid rounded" src="../images/settings/{{$home_image}}" alt="">
+                <img class="img-thumbnail Aimg" src="../images/settings/{{$home_image}}" alt="">
             </div>
         </div>
         <!-- /.row -->
 
         <hr>
-
-        @if(isset($paket['packages']) && count($paket['packages']) > 0)
-        <h1>Paketlerimiz</h1>
-        <section class="justify-content-center align-self-center d-flex">
-            <div class="row">
-                @foreach($paket['packages'] as $paket)
-                    @if($loop->iteration <= 3)
-                <div class="col-lg-4 col-sm-6 ">
-                    <div class="kart">
-                        <div class="kart2 paketozel ">
-                            <img src="../images/pack/{{$paket->paket_file}}"  class="card-img-top paketresim ">
-                            <div class="card-body" style="background-color: rgb(0,0,0,0)!important;">
-                                <h5 class="card-title">{{$paket->paket_ad}}</h5>
-                                <p class="card-text">{{$paket->paket_icerik}}</p>
-                            </div>
-
-                                {!! $paket->paket_ozellik !!}
-
-                            <div class="card-body">
-                                <a href="#" class="card-link">Satın Al</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                    @else
-                        <button class="btn btn-info m-5">Daha Fazla Paket Görmek İstersiniz</button>
-                    @endif
-                @endforeach
-            </div>
-
-        </section>
-        @endif
-        <section>
-
-        </section>
         @if(isset($data['ekip']) && count($data['ekip']) > 0)
         <section>
             <h1>Ekibimiz</h1>

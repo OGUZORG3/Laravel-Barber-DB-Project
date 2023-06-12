@@ -19,15 +19,15 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Paket Resim</label>
-                <input type="file" placeholder="{{$paket->paket_file}}" class="form-control" name="paket_file" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="file" value="{{$paket->paket_file}}" class="form-control" name="paket_file" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Paket AD</label>
-                <input type="text" placeholder="{{$paket->paket_ad}}" class="form-control" name="paket_ad" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" value="{{$paket->paket_ad}}" class="form-control" name="paket_ad" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Paket İcerik</label>
-                <input type="text" placeholder="{{$paket->paket_icerik}}" class="form-control" name="paket_icerik" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" value="{{$paket->paket_icerik}}" class="form-control" name="paket_icerik" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Paket Özellik</label>
@@ -42,9 +42,9 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Fiyat</label>
-                <input type="number" placeholder="{{$paket->paket_fiyat}}" class="form-control" name="paket_fiyat" id="exampleInputPassword1">
+                <input type="number" value="{{$paket->paket_fiyat}}" class="form-control" name="paket_fiyat" id="exampleInputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Düzenle</button>
 
         </form>
 
